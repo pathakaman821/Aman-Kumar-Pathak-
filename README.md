@@ -1,4 +1,4 @@
-# Aman Kumar Pathak
+# Aman-portfolio
 Performance Marketing Specialist | Social Media Manager
 Helping brands grow through:
 - Meta Ads
