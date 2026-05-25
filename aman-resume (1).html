@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Aman Kumar Pathak — Resume</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=DM+Sans:wght@300;400;500;600&family=Space+Mono&display=swap" rel="stylesheet" />
+<style>
+  :root {
+    --accent: #b8860b;
+    --accent-light: #d4a017;
+    --text: #1a1a2e;
+    --muted: #5a5a7a;
+    --light: #f8f6f0;
+    --border: #e0d8c0;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    background: #f0ece0;
+    font-family: 'DM Sans', sans-serif;
+    color: var(--text);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 2rem 1rem;
+  }
+
+  .print-bar {
+    width: 100%; max-width: 860px;
+    display: flex; justify-content: flex-end; gap: 0.8rem;
+    margin-bottom: 1rem;
+  }
+  .print-btn {
+    padding: 0.6rem 1.4rem; border-radius: 4px;
+    font-size: 0.85rem; font-weight: 600; cursor: pointer;
+    border: 2px solid var(--accent); background: var(--accent);
+    color: #fff; transition: all 0.2s; font-family: 'DM Sans', sans-serif;
+  }
+  .print-btn:hover { background: var(--accent-light); }
+  .back-btn {
+    padding: 0.6rem 1.4rem; border-radius: 4px;
+    font-size: 0.85rem; font-weight: 600; cursor: pointer;
+    border: 2px solid var(--border); background: transparent;
+    color: var(--text); text-decoration: none; font-family: 'DM Sans', sans-serif;
+  }
+
+  /* RESUME PAPER */
+  .resume {
+    width: 100%; max-width: 860px;
+    background: #fff;
+    box-shadow: 0 4px 40px rgba(0,0,0,0.12);
+  }
+
+  /* HEADER */
+  .r-header {
+    background: var(--text);
+    color: #fff;
+    padding: 2.5rem 3rem;
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: 2rem;
+    align-items: center;
+  }
+  .r-name {
+    font-family: 'Playfair Display', serif;
+    font-size: 2.6rem; font-weight: 900;
+    line-height: 1.1;
+    letter-spacing: -0.5px;
+  }
+  .r-name span { color: var(--accent-light); }
+  .r-title {
+    margin-top: 0.4rem;
+    font-size: 0.95rem; font-weight: 300;
+    color: rgba(255,255,255,0.7);
+    letter-spacing: 0.05em;
+  }
+  .r-contact { text-align: right; }
+  .r-contact-item {
+    display: flex; align-items: center; justify-content: flex-end;
+    gap: 0.4rem; color: rgba(255,255,255,0.8);
+    font-size: 0.82rem; margin-bottom: 0.4rem;
+  }
+  .r-contact-item a { color: var(--accent-light); text-decoration: none; }
+  .r-contact-item a:hover { text-decoration: underline; }
+
+  /* BODY */
+  .r-body { display: grid; grid-template-columns: 1fr 2fr; }
+
+  /* LEFT SIDEBAR */
+  .r-left {
+    background: var(--light);
+    border-right: 1px solid var(--border);
+    padding: 2rem 1.8rem;
+  }
+
+  /* RIGHT MAIN */
+  .r-right { padding: 2rem 2.2rem; }
+
+  /* SECTION */
+  .r-section { margin-bottom: 2rem; }
+  .r-section-title {
+    font-family: 'Space Mono', monospace;
+    font-size: 0.65rem; font-weight: 700;
+    letter-spacing: 0.2em; text-transform: uppercase;
+    color: var(--accent);
+    padding-bottom: 0.5rem;
+    border-bottom: 2px solid var(--accent);
+    margin-bottom: 1.2rem;
+  }
+
+  /* SUMMARY */
+  .r-summary {
+    font-size: 0.88rem; color: var(--muted);
+    line-height: 1.75;
+  }
+
+  /* EXPERIENCE ITEM */
+  .exp-item { margin-bottom: 1.5rem; }
+  .exp-header { display: flex; justify-content: space-between; align-items: flex-start; flex-wrap: wrap; gap: 0.3rem; }
+  .exp-role { font-weight: 600; font-size: 0.95rem; color: var(--text); }
+  .exp-date {
+    font-family: 'Space Mono', monospace;
+    font-size: 0.7rem; color: var(--muted);
+    white-space: nowrap;
+  }
+  .exp-co { font-size: 0.82rem; color: var(--accent); font-weight: 500; margin-bottom: 0.4rem; }
+  .exp-bullets { padding-left: 1.1rem; }
+  .exp-bullets li { font-size: 0.84rem; color: var(--muted); line-height: 1.7; margin-bottom: 0.2rem; }
+
+  /* EDUCATION */
+  .edu-item { margin-bottom: 1.2rem; }
+  .edu-degree { font-weight: 600; font-size: 0.9rem; }
+  .edu-school { font-size: 0.82rem; color: var(--accent); margin: 0.1rem 0; }
+  .edu-year { font-size: 0.78rem; color: var(--muted); font-family: 'Space Mono', monospace; }
+  .edu-note { font-size: 0.8rem; color: var(--muted); margin-top: 0.2rem; }
+
+  /* SKILLS LIST */
+  .skill-group { margin-bottom: 1.2rem; }
+  .skill-group-label { font-size: 0.78rem; font-weight: 600; color: var(--text); margin-bottom: 0.5rem; }
+  .skill-pills { display: flex; flex-wrap: wrap; gap: 0.35rem; }
+  .skill-pill {
+    background: #fff; border: 1px solid var(--border);
+    padding: 0.2rem 0.65rem; border-radius: 20px;
+    font-size: 0.73rem; color: var(--muted);
+  }
+
+  /* CERTS */
+  .cert-item { font-size: 0.82rem; color: var(--muted); margin-bottom: 0.5rem; }
+  .cert-item strong { color: var(--text); display: block; }
+
+  /* LANGUAGES */
+  .lang-item { display: flex; justify-content: space-between; font-size: 0.82rem; margin-bottom: 0.5rem; }
+  .lang-name { color: var(--text); font-weight: 500; }
+  .lang-level { color: var(--muted); }
+
+  /* PROJECTS */
+  .proj-item { margin-bottom: 1.3rem; }
+  .proj-title { font-weight: 600; font-size: 0.9rem; color: var(--text); }
+  .proj-desc { font-size: 0.82rem; color: var(--muted); line-height: 1.7; margin-top: 0.2rem; }
+  .proj-tags { display: flex; flex-wrap: wrap; gap: 0.3rem; margin-top: 0.4rem; }
+  .proj-tag { background: rgba(184,134,11,0.1); color: var(--accent); font-size: 0.7rem; padding: 0.15rem 0.5rem; border-radius: 2px; }
+
+  /* PRINT */
+  @media print {
+    body { background: #fff; padding: 0; }
+    .print-bar { display: none; }
+    .resume { box-shadow: none; max-width: 100%; }
+  }
+  @media (max-width: 600px) {
+    .r-header { grid-template-columns: 1fr; }
+    .r-contact { text-align: left; }
+    .r-contact-item { justify-content: flex-start; }
+    .r-body { grid-template-columns: 1fr; }
+    .r-left { border-right: none; border-bottom: 1px solid var(--border); }
+    .r-header { padding: 1.5rem; }
+    .r-left, .r-right { padding: 1.5rem; }
+  }
+</style>
+</head>
+<body>
+
+<div class="print-bar">
+  <a href="aman-portfolio.html" class="back-btn">← Portfolio</a>
+  <button class="print-btn" onclick="window.print()">🖨️ Print / Save PDF</button>
+</div>
+
+<div class="resume">
+
+  <!-- HEADER -->
+  <div class="r-header">
+    <div>
+      <div class="r-name">Aman Kumar <span>Pathak</span></div>
+      <div class="r-title">Performance Marketing Specialist &nbsp;|&nbsp; Social Media Manager &nbsp;|&nbsp; MBA</div>
+    </div>
+    <div class="r-contact">
+      <div class="r-contact-item">📧 <a href="mailto:pathakaman821@gmail.com">pathakaman821@gmail.com</a></div>
+      <div class="r-contact-item">🔗 <a href="https://linkedin.com/in/pathakaman821">linkedin.com/in/pathakaman821</a></div>
+      <div class="r-contact-item">🐙 <a href="https://github.com/pathakaman821">github.com/pathakaman821</a></div>
+      <div class="r-contact-item">📍 India</div>
+    </div>
+  </div>
+
+  <!-- BODY -->
+  <div class="r-body">
+
+    <!-- LEFT SIDEBAR -->
+    <div class="r-left">
+
+      <div class="r-section">
+        <div class="r-section-title">Core Skills</div>
+        <div class="skill-group">
+          <div class="skill-group-label">Paid Advertising</div>
+          <div class="skill-pills">
+            <span class="skill-pill">Meta Ads</span>
+            <span class="skill-pill">Facebook Ads Manager</span>
+            <span class="skill-pill">Instagram Ads</span>
+            <span class="skill-pill">Google Ads</span>
+            <span class="skill-pill">A/B Testing</span>
+            <span class="skill-pill">ROAS Optimization</span>
+          </div>
+        </div>
+        <div class="skill-group">
+          <div class="skill-group-label">Social Media</div>
+          <div class="skill-pills">
+            <span class="skill-pill">Content Strategy</span>
+            <span class="skill-pill">Community Management</span>
+            <span class="skill-pill">Brand Voice</span>
+            <span class="skill-pill">Content Calendar</span>
+          </div>
+        </div>
+        <div class="skill-group">
+          <div class="skill-group-label">Analytics & Tools</div>
+          <div class="skill-pills">
+            <span class="skill-pill">Meta Business Suite</span>
+            <span class="skill-pill">Google Analytics</span>
+            <span class="skill-pill">Pixel Setup</span>
+            <span class="skill-pill">Canva</span>
+            <span class="skill-pill">Excel</span>
+          </div>
+        </div>
+        <div class="skill-group">
+          <div class="skill-group-label">Business & Strategy</div>
+          <div class="skill-pills">
+            <span class="skill-pill">Market Research</span>
+            <span class="skill-pill">Brand Strategy</span>
+            <span class="skill-pill">Consumer Behavior</span>
+            <span class="skill-pill">Operations Mgmt</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="r-section">
+        <div class="r-section-title">Education</div>
+        <div class="edu-item">
+          <div class="edu-degree">MBA — Marketing &amp; Operations</div>
+          <div class="edu-school">Postgraduate Management Institute</div>
+          <div class="edu-year">2022 – 2024</div>
+          <div class="edu-note">Specialization in Marketing &amp; Operations Management</div>
+        </div>
+        <div class="edu-item">
+          <div class="edu-degree">Bachelor's Degree</div>
+          <div class="edu-school">Undergraduate Institution</div>
+          <div class="edu-year">2018 – 2021</div>
+        </div>
+      </div>
+
+      <div class="r-section">
+        <div class="r-section-title">Certifications</div>
+        <div class="cert-item">
+          <strong>Meta Blueprint Certification</strong>
+          Facebook & Instagram Advertising
+        </div>
+        <div class="cert-item">
+          <strong>Google Ads Certification</strong>
+          Search &amp; Display Advertising
+        </div>
+        <div class="cert-item">
+          <strong>Digital Marketing</strong>
+          Social Media Management
+        </div>
+      </div>
+
+      <div class="r-section">
+        <div class="r-section-title">Languages</div>
+        <div class="lang-item">
+          <span class="lang-name">Hindi</span>
+          <span class="lang-level">Native</span>
+        </div>
+        <div class="lang-item">
+          <span class="lang-name">English</span>
+          <span class="lang-level">Professional</span>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- RIGHT MAIN CONTENT -->
+    <div class="r-right">
+
+      <div class="r-section">
+        <div class="r-section-title">Professional Summary</div>
+        <p class="r-summary">
+          MBA graduate with specialization in Marketing &amp; Operations, skilled in performance marketing via Meta Ads and Google Ads, and strategic social media management. Experienced in full-funnel campaign execution — from audience targeting, creative strategy, and ad copy to optimization, ROAS tracking, and reporting. Passionate about helping brands grow through data-driven digital marketing with a strong understanding of consumer behavior and market dynamics.
+        </p>
+      </div>
+
+      <div class="r-section">
+        <div class="r-section-title">Experience</div>
+
+        <div class="exp-item">
+          <div class="exp-header">
+            <div class="exp-role">Performance Marketing Specialist</div>
+            <div class="exp-date">2024 – Present</div>
+          </div>
+          <div class="exp-co">Meta Ads | Digital Marketing</div>
+          <ul class="exp-bullets">
+            <li>Managed Meta Ads (Facebook &amp; Instagram) campaigns for multiple clients, driving measurable growth in leads and conversions.</li>
+            <li>Performed audience research, segmentation, and lookalike audience creation to maximize ad relevance and reduce CPL.</li>
+            <li>Conducted regular A/B testing of ad creatives, copies, and landing pages to improve ROAS.</li>
+            <li>Delivered weekly and monthly performance reports with insights and actionable recommendations.</li>
+            <li>Set up and verified Meta Pixel, tracked conversion events, and optimized campaign objectives.</li>
+          </ul>
+        </div>
+
+        <div class="exp-item">
+          <div class="exp-header">
+            <div class="exp-role">Social Media Manager</div>
+            <div class="exp-date">2023 – 2024</div>
+          </div>
+          <div class="exp-co">Brand Management | Content Strategy</div>
+          <ul class="exp-bullets">
+            <li>Developed content strategies and monthly content calendars for Instagram, Facebook, and LinkedIn.</li>
+            <li>Created and scheduled posts, reels, and stories aligned with brand voice and business objectives.</li>
+            <li>Grew organic following through community engagement, hashtag strategy, and consistent posting.</li>
+            <li>Analyzed performance metrics and optimized content approach based on engagement and reach data.</li>
+          </ul>
+        </div>
+
+        <div class="exp-item">
+          <div class="exp-header">
+            <div class="exp-role">MBA Program</div>
+            <div class="exp-date">2022 – 2024</div>
+          </div>
+          <div class="exp-co">Marketing &amp; Operations — Postgraduate</div>
+          <ul class="exp-bullets">
+            <li>Specialized in Marketing and Operations Management with hands-on projects in digital marketing, consumer behavior, and supply chain.</li>
+            <li>Completed live projects on brand strategy, market segmentation, and go-to-market planning.</li>
+          </ul>
+        </div>
+
+      </div>
+
+      <div class="r-section">
+        <div class="r-section-title">Key Projects</div>
+
+        <div class="proj-item">
+          <div class="proj-title">Meta Ads Performance Portfolio</div>
+          <div class="proj-desc">Documented campaign case studies showcasing strategy, audience targeting, creative decisions, and performance outcomes including ROAS improvements and growth metrics.</div>
+          <div class="proj-tags">
+            <span class="proj-tag">Meta Ads</span><span class="proj-tag">ROAS</span><span class="proj-tag">Campaign Strategy</span>
+          </div>
+        </div>
+
+        <div class="proj-item">
+          <div class="proj-title">Social Media Brand Campaign</div>
+          <div class="proj-desc">Built and executed a full social media campaign — content calendar, visual guidelines, copywriting, scheduling, and monthly analytics reporting for organic growth.</div>
+          <div class="proj-tags">
+            <span class="proj-tag">Instagram</span><span class="proj-tag">Content Strategy</span><span class="proj-tag">Analytics</span>
+          </div>
+        </div>
+
+        <div class="proj-item">
+          <div class="proj-title">MBA Consumer Research — FMCG Brand</div>
+          <div class="proj-desc">Market research project covering consumer segmentation, pricing strategy, competitive analysis, and go-to-market recommendations for an FMCG product launch.</div>
+          <div class="proj-tags">
+            <span class="proj-tag">Market Research</span><span class="proj-tag">Brand Strategy</span><span class="proj-tag">MBA</span>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </div><!-- /r-body -->
+</div><!-- /resume -->
+
+</body>
+</html>

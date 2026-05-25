@@ -1,0 +1,562 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Aman Kumar Pathak | Performance Marketing Portfolio</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=DM+Sans:wght@300;400;500;600&family=Space+Mono&display=swap" rel="stylesheet" />
+<style>
+  :root {
+    --bg: #0a0a0f;
+    --bg2: #111118;
+    --card: #16161f;
+    --accent: #e8c547;
+    --accent2: #f97316;
+    --text: #f0ede8;
+    --muted: #8a8798;
+    --border: rgba(232,197,71,0.15);
+  }
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: 'DM Sans', sans-serif;
+    line-height: 1.6;
+    overflow-x: hidden;
+  }
+
+  /* ── NAV ── */
+  nav {
+    position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 1.2rem 4rem;
+    background: rgba(10,10,15,0.85);
+    backdrop-filter: blur(14px);
+    border-bottom: 1px solid var(--border);
+  }
+  .nav-logo {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.6rem; font-weight: 900;
+    color: var(--accent);
+    letter-spacing: -1px;
+  }
+  .nav-links { display: flex; gap: 2.5rem; list-style: none; }
+  .nav-links a {
+    color: var(--muted); text-decoration: none;
+    font-size: 0.85rem; font-weight: 500; letter-spacing: 0.08em;
+    text-transform: uppercase; transition: color 0.3s;
+  }
+  .nav-links a:hover { color: var(--accent); }
+
+  /* ── HERO ── */
+  #hero {
+    min-height: 100vh;
+    display: grid; grid-template-columns: 1fr 1fr;
+    align-items: center;
+    padding: 8rem 4rem 4rem;
+    position: relative;
+    overflow: hidden;
+  }
+  .hero-bg {
+    position: absolute; inset: 0; z-index: 0;
+    background:
+      radial-gradient(ellipse 60% 50% at 80% 40%, rgba(232,197,71,0.06) 0%, transparent 70%),
+      radial-gradient(ellipse 40% 40% at 20% 80%, rgba(249,115,22,0.05) 0%, transparent 70%);
+  }
+  .hero-tag {
+    font-family: 'Space Mono', monospace;
+    font-size: 0.75rem; letter-spacing: 0.2em;
+    color: var(--accent); text-transform: uppercase;
+    border: 1px solid var(--accent);
+    display: inline-block; padding: 0.4rem 1rem;
+    border-radius: 2px; margin-bottom: 1.5rem;
+    opacity: 0; animation: fadeUp 0.8s 0.2s forwards;
+  }
+  .hero-content { position: relative; z-index: 1; }
+  .hero-name {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(3rem, 6vw, 5.5rem);
+    font-weight: 900; line-height: 1.05;
+    opacity: 0; animation: fadeUp 0.8s 0.4s forwards;
+  }
+  .hero-name span { color: var(--accent); }
+  .hero-title {
+    margin-top: 1rem;
+    font-size: 1.15rem; font-weight: 300;
+    color: var(--muted);
+    opacity: 0; animation: fadeUp 0.8s 0.6s forwards;
+  }
+  .hero-desc {
+    margin-top: 1.5rem; max-width: 480px;
+    font-size: 1rem; color: #b8b4c8; line-height: 1.8;
+    opacity: 0; animation: fadeUp 0.8s 0.8s forwards;
+  }
+  .hero-btns {
+    margin-top: 2.5rem; display: flex; gap: 1rem; flex-wrap: wrap;
+    opacity: 0; animation: fadeUp 0.8s 1s forwards;
+  }
+  .btn {
+    padding: 0.85rem 2rem; border-radius: 3px;
+    font-size: 0.9rem; font-weight: 600; text-decoration: none;
+    letter-spacing: 0.05em; transition: all 0.3s; cursor: pointer;
+    display: inline-block;
+  }
+  .btn-primary { background: var(--accent); color: #0a0a0f; }
+  .btn-primary:hover { background: #f5d66a; transform: translateY(-2px); box-shadow: 0 8px 30px rgba(232,197,71,0.3); }
+  .btn-outline { border: 1px solid var(--border); color: var(--text); background: transparent; }
+  .btn-outline:hover { border-color: var(--accent); color: var(--accent); transform: translateY(-2px); }
+
+  .hero-visual {
+    position: relative; z-index: 1;
+    display: flex; justify-content: center; align-items: center;
+    opacity: 0; animation: fadeIn 1s 0.5s forwards;
+  }
+  .hero-img-wrap {
+    width: 340px; height: 340px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, var(--accent) 0%, var(--accent2) 100%);
+    padding: 4px;
+    position: relative;
+  }
+  .hero-img-inner {
+    width: 100%; height: 100%; border-radius: 50%;
+    background: var(--card);
+    display: flex; align-items: center; justify-content: center;
+    font-family: 'Playfair Display', serif;
+    font-size: 6rem; font-weight: 900; color: var(--accent);
+    letter-spacing: -4px;
+    overflow: hidden;
+  }
+  .hero-img-inner img { width: 100%; height: 100%; object-fit: cover; border-radius: 50%; }
+  .hero-badge {
+    position: absolute; bottom: 20px; right: -10px;
+    background: var(--card); border: 1px solid var(--border);
+    padding: 0.7rem 1.2rem; border-radius: 8px;
+    font-size: 0.8rem; color: var(--muted);
+    display: flex; align-items: center; gap: 0.5rem;
+  }
+  .hero-badge strong { color: var(--text); display: block; font-size: 1rem; }
+  .dot { width: 8px; height: 8px; border-radius: 50%; background: #22c55e; }
+
+  /* ── SECTIONS ── */
+  section { padding: 5rem 4rem; }
+  .section-label {
+    font-family: 'Space Mono', monospace;
+    font-size: 0.7rem; letter-spacing: 0.25em;
+    color: var(--accent); text-transform: uppercase;
+    margin-bottom: 0.5rem;
+  }
+  .section-title {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(2rem, 4vw, 3rem); font-weight: 700;
+    line-height: 1.15; margin-bottom: 3rem;
+  }
+
+  /* ── ABOUT ── */
+  #about { background: var(--bg2); }
+  .about-grid { display: grid; grid-template-columns: 1.2fr 1fr; gap: 4rem; align-items: start; }
+  .about-text p { color: #b8b4c8; line-height: 1.9; margin-bottom: 1.2rem; font-size: 1.05rem; }
+  .stats-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1.2rem; }
+  .stat-card {
+    background: var(--card); border: 1px solid var(--border);
+    padding: 1.5rem; border-radius: 8px;
+    transition: border-color 0.3s, transform 0.3s;
+  }
+  .stat-card:hover { border-color: var(--accent); transform: translateY(-3px); }
+  .stat-num {
+    font-family: 'Playfair Display', serif;
+    font-size: 2.5rem; font-weight: 900; color: var(--accent);
+    line-height: 1;
+  }
+  .stat-label { color: var(--muted); font-size: 0.85rem; margin-top: 0.3rem; }
+
+  /* ── SKILLS ── */
+  #skills { background: var(--bg); }
+  .skills-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 1.5rem; }
+  .skill-card {
+    background: var(--card); border: 1px solid var(--border);
+    padding: 2rem; border-radius: 10px;
+    transition: all 0.3s;
+    position: relative; overflow: hidden;
+  }
+  .skill-card::before {
+    content: ''; position: absolute; top: 0; left: 0; right: 0; height: 2px;
+    background: linear-gradient(90deg, var(--accent), var(--accent2));
+    transform: scaleX(0); transform-origin: left;
+    transition: transform 0.4s;
+  }
+  .skill-card:hover::before { transform: scaleX(1); }
+  .skill-card:hover { transform: translateY(-4px); box-shadow: 0 12px 40px rgba(0,0,0,0.3); }
+  .skill-icon { font-size: 2rem; margin-bottom: 1rem; }
+  .skill-name { font-size: 1.1rem; font-weight: 600; margin-bottom: 0.5rem; }
+  .skill-desc { color: var(--muted); font-size: 0.9rem; line-height: 1.7; }
+  .skill-tags { display: flex; flex-wrap: wrap; gap: 0.4rem; margin-top: 1rem; }
+  .tag {
+    background: rgba(232,197,71,0.1); color: var(--accent);
+    border: 1px solid rgba(232,197,71,0.2);
+    padding: 0.2rem 0.7rem; border-radius: 20px; font-size: 0.75rem;
+  }
+
+  /* ── EXPERIENCE ── */
+  #experience { background: var(--bg2); }
+  .exp-list { display: flex; flex-direction: column; gap: 1.5rem; max-width: 800px; }
+  .exp-card {
+    background: var(--card); border: 1px solid var(--border);
+    border-radius: 10px; padding: 2rem;
+    display: grid; grid-template-columns: auto 1fr;
+    gap: 1.5rem; align-items: start;
+    transition: all 0.3s;
+  }
+  .exp-card:hover { border-color: var(--accent); transform: translateX(6px); }
+  .exp-dot {
+    width: 12px; height: 12px; border-radius: 50%;
+    background: var(--accent); margin-top: 6px;
+    box-shadow: 0 0 12px rgba(232,197,71,0.5);
+  }
+  .exp-role { font-size: 1.1rem; font-weight: 600; margin-bottom: 0.2rem; }
+  .exp-company { color: var(--accent); font-size: 0.9rem; margin-bottom: 0.3rem; }
+  .exp-date { color: var(--muted); font-size: 0.8rem; font-family: 'Space Mono', monospace; margin-bottom: 0.8rem; }
+  .exp-desc { color: #b8b4c8; font-size: 0.9rem; line-height: 1.7; }
+
+  /* ── PROJECTS ── */
+  #projects { background: var(--bg); }
+  .proj-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 1.5rem; }
+  .proj-card {
+    background: var(--card); border: 1px solid var(--border);
+    border-radius: 10px; padding: 2rem;
+    transition: all 0.3s; cursor: pointer;
+  }
+  .proj-card:hover { border-color: var(--accent2); transform: translateY(-5px); box-shadow: 0 16px 50px rgba(0,0,0,0.4); }
+  .proj-num {
+    font-family: 'Space Mono', monospace;
+    font-size: 0.7rem; color: var(--muted); margin-bottom: 1rem;
+  }
+  .proj-title { font-size: 1.15rem; font-weight: 600; margin-bottom: 0.6rem; }
+  .proj-desc { color: var(--muted); font-size: 0.9rem; line-height: 1.7; }
+
+  /* ── CONTACT ── */
+  #contact { background: var(--bg2); text-align: center; }
+  .contact-wrap { max-width: 600px; margin: 0 auto; }
+  .contact-text { color: var(--muted); font-size: 1.05rem; line-height: 1.8; margin-bottom: 2.5rem; }
+  .contact-links { display: flex; flex-wrap: wrap; justify-content: center; gap: 1rem; margin-bottom: 2.5rem; }
+  .contact-item {
+    display: flex; align-items: center; gap: 0.6rem;
+    background: var(--card); border: 1px solid var(--border);
+    padding: 0.8rem 1.4rem; border-radius: 8px;
+    color: var(--text); text-decoration: none; font-size: 0.9rem;
+    transition: all 0.3s;
+  }
+  .contact-item:hover { border-color: var(--accent); color: var(--accent); transform: translateY(-2px); }
+  .contact-icon { font-size: 1rem; }
+
+  /* ── FOOTER ── */
+  footer {
+    text-align: center; padding: 2rem;
+    border-top: 1px solid var(--border);
+    color: var(--muted); font-size: 0.8rem;
+  }
+
+  /* ── ANIMATIONS ── */
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(24px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+  @keyframes fadeIn {
+    from { opacity: 0; } to { opacity: 1; }
+  }
+
+  /* ── RESPONSIVE ── */
+  @media (max-width: 768px) {
+    nav { padding: 1rem 1.5rem; }
+    .nav-links { gap: 1.2rem; }
+    #hero { grid-template-columns: 1fr; padding: 7rem 1.5rem 3rem; text-align: center; }
+    .hero-visual { display: none; }
+    .hero-desc { max-width: 100%; }
+    .hero-btns { justify-content: center; }
+    section { padding: 3.5rem 1.5rem; }
+    .about-grid { grid-template-columns: 1fr; gap: 2rem; }
+  }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-logo">AKP.</div>
+  <ul class="nav-links">
+    <li><a href="#about">About</a></li>
+    <li><a href="#skills">Skills</a></li>
+    <li><a href="#experience">Experience</a></li>
+    <li><a href="#projects">Projects</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<section id="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-content">
+    <div class="hero-tag">Performance Marketing • Social Media • MBA</div>
+    <h1 class="hero-name">Aman Kumar<br/><span>Pathak</span></h1>
+    <p class="hero-title">Performance Marketing Specialist | Social Media Manager</p>
+    <p class="hero-desc">
+      MBA in Marketing &amp; Operations. Helping brands grow through data-driven Meta &amp; Google Ads, strategic social media management, and performance-first digital campaigns.
+    </p>
+    <div class="hero-btns">
+      <a href="aman-resume.html" class="btn btn-primary" target="_blank">Download Resume</a>
+      <a href="https://linkedin.com/in/pathakaman821" class="btn btn-outline" target="_blank">LinkedIn</a>
+      <a href="https://github.com/pathakaman821" class="btn btn-outline" target="_blank">GitHub</a>
+    </div>
+  </div>
+  <div class="hero-visual">
+    <div class="hero-img-wrap">
+      <div class="hero-img-inner">
+        <img src="https://avatars.githubusercontent.com/u/287376212?v=4" alt="Aman Kumar Pathak" onerror="this.parentElement.textContent='AKP'" />
+      </div>
+    </div>
+    <div class="hero-badge">
+      <div>
+        <strong>Available</strong>
+        for new roles
+      </div>
+      <div class="dot"></div>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section id="about">
+  <p class="section-label">// 01 — WHO I AM</p>
+  <h2 class="section-title">About Me</h2>
+  <div class="about-grid">
+    <div class="about-text">
+      <p>
+        MBA graduate with specialization in Marketing &amp; Operations, passionate about driving measurable business results through performance marketing. I combine analytical thinking with creative strategy to build campaigns that convert.
+      </p>
+      <p>
+        Experienced in Meta Ads (Facebook &amp; Instagram), Google Ads, and organic social media management — from audience research and content planning to ad optimization and ROAS reporting. I believe in letting data guide creativity.
+      </p>
+      <p>
+        Currently exploring growth opportunities in performance marketing, digital strategy, and brand management roles where I can contribute to scaling businesses and delivering ROI.
+      </p>
+    </div>
+    <div class="stats-grid">
+      <div class="stat-card">
+        <div class="stat-num">MBA</div>
+        <div class="stat-label">Marketing &amp; Operations</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-num">Meta</div>
+        <div class="stat-label">Ads Specialist</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-num">3+</div>
+        <div class="stat-label">Major Projects</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-num">2026</div>
+        <div class="stat-label">MBA Graduate</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SKILLS -->
+<section id="skills">
+  <p class="section-label">// 02 — WHAT I DO</p>
+  <h2 class="section-title">Skills &amp; Domains</h2>
+  <div class="skills-grid">
+
+    <div class="skill-card">
+      <div class="skill-icon">🚀</div>
+      <div class="skill-name">Performance Marketing</div>
+      <div class="skill-desc">End-to-end campaign management on Meta &amp; Google — from strategy, ad creation, A/B testing to optimization and ROAS tracking.</div>
+      <div class="skill-tags">
+        <span class="tag">Meta Ads</span>
+        <span class="tag">Google Ads</span>
+        <span class="tag">ROAS</span>
+        <span class="tag">A/B Testing</span>
+      </div>
+    </div>
+
+    <div class="skill-card">
+      <div class="skill-icon">📱</div>
+      <div class="skill-name">Social Media Management</div>
+      <div class="skill-desc">Building brand presence through strategic content planning, community engagement, platform-specific storytelling, and audience growth.</div>
+      <div class="skill-tags">
+        <span class="tag">Instagram</span>
+        <span class="tag">Facebook</span>
+        <span class="tag">LinkedIn</span>
+        <span class="tag">Content Strategy</span>
+      </div>
+    </div>
+
+    <div class="skill-card">
+      <div class="skill-icon">📊</div>
+      <div class="skill-name">Marketing Analytics</div>
+      <div class="skill-desc">Translating campaign data into actionable insights — funnel analysis, audience segmentation, conversion tracking, and performance reporting.</div>
+      <div class="skill-tags">
+        <span class="tag">Meta Business Suite</span>
+        <span class="tag">Google Analytics</span>
+        <span class="tag">Reporting</span>
+      </div>
+    </div>
+
+    <div class="skill-card">
+      <div class="skill-icon">🎯</div>
+      <div class="skill-name">Brand Strategy</div>
+      <div class="skill-desc">Developing brand positioning, messaging frameworks, and go-to-market strategies that align with business goals and audience needs.</div>
+      <div class="skill-tags">
+        <span class="tag">Positioning</span>
+        <span class="tag">GTM Strategy</span>
+        <span class="tag">Consumer Insights</span>
+      </div>
+    </div>
+
+    <div class="skill-card">
+      <div class="skill-icon">⚙️</div>
+      <div class="skill-name">Operations &amp; Coordination</div>
+      <div class="skill-desc">MBA-backed understanding of business operations, workflow coordination, vendor management, and cross-functional project execution.</div>
+      <div class="skill-tags">
+        <span class="tag">Project Management</span>
+        <span class="tag">Workflow Design</span>
+        <span class="tag">Coordination</span>
+      </div>
+    </div>
+
+    <div class="skill-card">
+      <div class="skill-icon">✍️</div>
+      <div class="skill-name">Content &amp; Copywriting</div>
+      <div class="skill-desc">Crafting compelling ad copies, captions, email sequences, and marketing collateral that drive clicks and conversions.</div>
+      <div class="skill-tags">
+        <span class="tag">Ad Copywriting</span>
+        <span class="tag">Email Marketing</span>
+        <span class="tag">SEO Writing</span>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- EXPERIENCE -->
+<section id="experience">
+  <p class="section-label">// 03 — WHERE I'VE BEEN</p>
+  <h2 class="section-title">Experience</h2>
+  <div class="exp-list">
+
+    <div class="exp-card">
+      <div class="exp-dot"></div>
+      <div>
+        <div class="exp-role">Performance Marketing Specialist</div>
+        <div class="exp-company">Meta Ads | Digital Marketing</div>
+        <div class="exp-date">2024 – Present</div>
+        <div class="exp-desc">
+          Managing end-to-end Meta Ads campaigns for brands — audience research, creative strategy, campaign setup, optimization, and ROAS-focused reporting. Helping brands scale through data-driven paid social strategies.
+        </div>
+      </div>
+    </div>
+
+    <div class="exp-card">
+      <div class="exp-dot"></div>
+      <div>
+        <div class="exp-role">Social Media Manager</div>
+        <div class="exp-company">Brand Management | Content Strategy</div>
+        <div class="exp-date">2023 – 2024</div>
+        <div class="exp-desc">
+          Developed and executed social media strategies across Instagram, Facebook, and LinkedIn. Responsible for content calendars, community engagement, brand voice consistency, and organic growth initiatives.
+        </div>
+      </div>
+    </div>
+
+    <div class="exp-card">
+      <div class="exp-dot"></div>
+      <div>
+        <div class="exp-role">MBA — Marketing &amp; Operations</div>
+        <div class="exp-company">Postgraduate Program</div>
+        <div class="exp-date">2022 – 2024</div>
+        <div class="exp-desc">
+          Specialized in Marketing and Operations Management. Gained deep knowledge in consumer behavior, business strategy, supply chain, digital marketing, and analytics. Completed multiple live projects and case studies.
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- PROJECTS -->
+<section id="projects">
+  <p class="section-label">// 04 — WHAT I'VE BUILT</p>
+  <h2 class="section-title">Projects &amp; Campaigns</h2>
+  <div class="proj-grid">
+
+    <div class="proj-card">
+      <div class="proj-num">PROJECT 01</div>
+      <div class="proj-title">Meta Ads Performance Portfolio</div>
+      <div class="proj-desc">Documented case studies of Meta Ads campaigns — strategy, audience targeting, creatives, budget management, and performance outcomes. Showcasing ROAS improvements and growth metrics.</div>
+      <div class="skill-tags" style="margin-top:1rem">
+        <span class="tag">Meta Ads</span><span class="tag">ROAS</span><span class="tag">Case Study</span>
+      </div>
+    </div>
+
+    <div class="proj-card">
+      <div class="proj-num">PROJECT 02</div>
+      <div class="proj-title">Social Media Brand Campaign</div>
+      <div class="proj-desc">Built and executed a complete social media campaign for a brand — content calendar, visual identity guidelines, copywriting, scheduling, and monthly analytics reporting.</div>
+      <div class="skill-tags" style="margin-top:1rem">
+        <span class="tag">Instagram</span><span class="tag">Content Strategy</span><span class="tag">Analytics</span>
+      </div>
+    </div>
+
+    <div class="proj-card">
+      <div class="proj-num">PROJECT 03</div>
+      <div class="proj-title">MBA Marketing Research Project</div>
+      <div class="proj-desc">Consumer behavior research project covering market segmentation, pricing strategy, competitive analysis, and go-to-market recommendations for a FMCG brand.</div>
+      <div class="skill-tags" style="margin-top:1rem">
+        <span class="tag">Market Research</span><span class="tag">Strategy</span><span class="tag">MBA</span>
+      </div>
+    </div>
+
+    <div class="proj-card">
+      <div class="proj-num">PROJECT 04</div>
+      <div class="proj-title">Digital Marketing Portfolio Site</div>
+      <div class="proj-desc">Built this portfolio website to present work, campaigns, and skills in a professional format — targeting performance marketing and social media management roles.</div>
+      <div class="skill-tags" style="margin-top:1rem">
+        <span class="tag">Portfolio</span><span class="tag">Personal Brand</span><span class="tag">HTML</span>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+  <div class="contact-wrap">
+    <p class="section-label">// 05 — REACH OUT</p>
+    <h2 class="section-title">Let's Connect</h2>
+    <p class="contact-text">
+      Open to opportunities in Performance Marketing, Social Media Management, Digital Strategy, and Brand Marketing roles. Let's talk about how I can help grow your brand.
+    </p>
+    <div class="contact-links">
+      <a href="mailto:pathakaman821@gmail.com" class="contact-item">
+        <span class="contact-icon">📧</span> pathakaman821@gmail.com
+      </a>
+      <a href="https://linkedin.com/in/pathakaman821" class="contact-item" target="_blank">
+        <span class="contact-icon">🔗</span> LinkedIn
+      </a>
+      <a href="https://github.com/pathakaman821" class="contact-item" target="_blank">
+        <span class="contact-icon">🐙</span> GitHub
+      </a>
+    </div>
+    <a href="aman-resume.html" class="btn btn-primary" target="_blank">View Full Resume →</a>
+  </div>
+</section>
+
+<footer>
+  <p>© 2026 Aman Kumar Pathak — Performance Marketing Specialist &amp; MBA Graduate</p>
+</footer>
+
+</body>
+</html>
