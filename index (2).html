@@ -1,0 +1,538 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<meta name="description" content="Aman Kumar Pathak – Performance Marketing Specialist | Meta Ads | Google Ads | Social Media Manager | MBA Marketing & Operations"/>
+<title>Aman Kumar Pathak | Performance Marketing Specialist</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400&family=Outfit:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet"/>
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;font-size:16px}
+body{background:#f5f2ec;color:#1c1a17;font-family:'Outfit',sans-serif;line-height:1.6;overflow-x:hidden}
+:root{
+  --ink:#1c1a17;--ink2:#4a4540;--paper:#f5f2ec;--paper2:#edeae2;
+  --cream:#e8e3d8;--gold:#c9973a;--gold2:#e8b84b;--white:#ffffff;
+  --border:#d8d3c8;--shadow:0 2px 24px rgba(28,26,23,0.08);
+}
+::-webkit-scrollbar{width:4px}
+::-webkit-scrollbar-track{background:var(--paper)}
+::-webkit-scrollbar-thumb{background:var(--gold);border-radius:2px}
+
+/* NAV */
+nav{position:fixed;top:0;left:0;right:0;z-index:200;display:flex;align-items:center;justify-content:space-between;padding:1.1rem 3.5rem;background:rgba(245,242,236,0.88);backdrop-filter:blur(20px);border-bottom:1px solid var(--border);transition:all 0.3s}
+nav.scrolled{padding:0.8rem 3.5rem;background:rgba(245,242,236,0.97);box-shadow:var(--shadow)}
+.nav-logo{font-family:'Cormorant Garamond',serif;font-size:1.5rem;font-weight:700;color:var(--ink);text-decoration:none;letter-spacing:-0.5px}
+.nav-logo span{color:var(--gold)}
+.nav-links{display:flex;align-items:center;gap:2.2rem;list-style:none}
+.nav-links a{color:var(--ink2);text-decoration:none;font-size:0.82rem;font-weight:500;letter-spacing:0.1em;text-transform:uppercase;transition:color 0.25s;position:relative}
+.nav-links a::after{content:'';position:absolute;bottom:-3px;left:0;right:0;height:1px;background:var(--gold);transform:scaleX(0);transform-origin:left;transition:transform 0.3s}
+.nav-links a:hover{color:var(--gold)}
+.nav-links a:hover::after{transform:scaleX(1)}
+.nav-cta{background:var(--ink)!important;color:var(--paper)!important;padding:0.55rem 1.4rem;border-radius:2px;font-size:0.78rem!important;letter-spacing:0.12em!important}
+.nav-cta::after{display:none!important}
+.nav-cta:hover{background:var(--gold)!important;color:var(--white)!important}
+
+/* HERO */
+#hero{min-height:100vh;display:grid;grid-template-columns:1fr 420px;align-items:stretch;position:relative;z-index:1}
+.hero-left{padding:10rem 4rem 5rem;display:flex;flex-direction:column;justify-content:center;border-right:1px solid var(--border)}
+.hero-eyebrow{display:inline-flex;align-items:center;gap:0.6rem;font-family:'JetBrains Mono',monospace;font-size:0.7rem;letter-spacing:0.2em;text-transform:uppercase;color:var(--gold);margin-bottom:1.8rem;opacity:0;animation:slideIn 0.7s 0.2s ease forwards}
+.hero-eyebrow::before{content:'';width:28px;height:1px;background:var(--gold)}
+.hero-name{font-family:'Cormorant Garamond',serif;font-size:clamp(3.5rem,6vw,6rem);font-weight:700;line-height:0.95;letter-spacing:-2px;color:var(--ink);margin-bottom:1.5rem;opacity:0;animation:slideIn 0.7s 0.35s ease forwards}
+.hero-name em{color:var(--gold);font-style:italic}
+.hero-role{font-size:1rem;font-weight:400;color:var(--ink2);max-width:500px;line-height:1.8;border-left:3px solid var(--gold);padding-left:1.2rem;margin-bottom:2.5rem;opacity:0;animation:slideIn 0.7s 0.5s ease forwards}
+.hero-meta{display:flex;flex-wrap:wrap;gap:1rem;margin-bottom:3rem;opacity:0;animation:slideIn 0.7s 0.65s ease forwards}
+.hero-chip{display:flex;align-items:center;gap:0.4rem;background:var(--white);border:1px solid var(--border);padding:0.4rem 0.9rem;border-radius:20px;font-size:0.78rem;color:var(--ink2)}
+.hero-chip .dot{width:6px;height:6px;border-radius:50%;background:#22c55e}
+.hero-btns{display:flex;gap:1rem;flex-wrap:wrap;opacity:0;animation:slideIn 0.7s 0.8s ease forwards}
+.btn{display:inline-flex;align-items:center;gap:0.5rem;padding:0.85rem 2rem;border-radius:2px;font-size:0.82rem;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;text-decoration:none;transition:all 0.25s;cursor:pointer;border:none;font-family:'Outfit',sans-serif}
+.btn-dark{background:var(--ink);color:var(--paper)}
+.btn-dark:hover{background:var(--gold);transform:translateY(-2px);box-shadow:0 8px 24px rgba(201,151,58,0.3)}
+.btn-outline{background:transparent;color:var(--ink);border:1.5px solid var(--ink)}
+.btn-outline:hover{border-color:var(--gold);color:var(--gold);transform:translateY(-2px)}
+.hero-right{background:var(--ink);display:flex;flex-direction:column;align-items:center;justify-content:center;padding:10rem 3rem 5rem;gap:2rem;position:relative;overflow:hidden}
+.hero-right::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 60% 60% at 50% 30%,rgba(201,151,58,0.1) 0%,transparent 70%)}
+.hero-photo-frame{width:200px;height:200px;border-radius:50%;border:3px solid var(--gold);padding:3px;position:relative;z-index:1;opacity:0;animation:fadeIn 1s 0.6s ease forwards}
+.hero-photo-frame img{width:100%;height:100%;border-radius:50%;object-fit:cover;display:block}
+.hero-photo-initials{width:100%;height:100%;border-radius:50%;background:linear-gradient(135deg,#2a2720,#3d3930);display:flex;align-items:center;justify-content:center;font-family:'Cormorant Garamond',serif;font-size:3rem;font-weight:700;color:var(--gold);letter-spacing:-2px}
+.hero-stats{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:rgba(255,255,255,0.06);width:100%;position:relative;z-index:1;opacity:0;animation:fadeIn 1s 0.9s ease forwards}
+.hero-stat{background:var(--ink);padding:1.4rem 1.2rem;text-align:center;border:1px solid rgba(255,255,255,0.05);transition:background 0.3s}
+.hero-stat:hover{background:#252219}
+.stat-n{font-family:'Cormorant Garamond',serif;font-size:2rem;font-weight:700;color:var(--gold);display:block;line-height:1}
+.stat-l{font-size:0.68rem;color:rgba(255,255,255,0.45);letter-spacing:0.08em;text-transform:uppercase;margin-top:0.3rem;display:block}
+.hero-available{display:flex;align-items:center;gap:0.6rem;position:relative;z-index:1;font-size:0.72rem;color:rgba(255,255,255,0.45);letter-spacing:0.1em;text-transform:uppercase;opacity:0;animation:fadeIn 1s 1.1s ease forwards}
+.pulse{width:8px;height:8px;border-radius:50%;background:#4ade80;box-shadow:0 0 0 0 rgba(74,222,128,0.6);animation:pulse 2s infinite}
+@keyframes pulse{0%{box-shadow:0 0 0 0 rgba(74,222,128,0.5)}70%{box-shadow:0 0 0 8px rgba(74,222,128,0)}100%{box-shadow:0 0 0 0 rgba(74,222,128,0)}}
+
+/* SECTIONS */
+section{position:relative;z-index:1}
+.section-inner{padding:6rem 3.5rem}
+.section-header{margin-bottom:4rem}
+.section-tag{font-family:'JetBrains Mono',monospace;font-size:0.68rem;letter-spacing:0.25em;color:var(--gold);text-transform:uppercase;display:flex;align-items:center;gap:0.6rem;margin-bottom:0.8rem}
+.section-tag::before{content:'';width:20px;height:1px;background:var(--gold)}
+.section-title{font-family:'Cormorant Garamond',serif;font-size:clamp(2.2rem,4vw,3.2rem);font-weight:700;color:var(--ink);line-height:1.1;letter-spacing:-1px}
+.section-title em{color:var(--gold);font-style:italic}
+
+/* ABOUT */
+#about{background:var(--white)}
+.about-grid{display:grid;grid-template-columns:1.4fr 1fr;gap:5rem;align-items:start}
+.about-body p{font-size:1.02rem;color:var(--ink2);line-height:1.9;margin-bottom:1.3rem}
+.about-body p:first-child{font-family:'Cormorant Garamond',serif;font-size:1.3rem;color:var(--ink);line-height:1.6}
+.about-body strong{color:var(--ink);font-weight:600}
+.aside-card{background:var(--paper);border:1px solid var(--border);border-radius:4px;padding:2rem;margin-bottom:1.2rem}
+.aside-card-label{font-family:'JetBrains Mono',monospace;font-size:0.65rem;letter-spacing:0.2em;text-transform:uppercase;color:var(--gold);margin-bottom:1rem}
+.info-row{display:flex;align-items:center;gap:0.8rem;padding:0.6rem 0;border-bottom:1px solid var(--border);font-size:0.88rem;color:var(--ink2)}
+.info-row:last-child{border-bottom:none}
+.info-row .icon{font-size:0.9rem;width:18px;text-align:center}
+.info-row a{color:var(--gold);text-decoration:none}
+.info-row a:hover{text-decoration:underline}
+
+/* EXPERIENCE */
+#experience{background:var(--paper)}
+.exp-timeline{position:relative;padding-left:2rem}
+.exp-timeline::before{content:'';position:absolute;left:0;top:0;bottom:0;width:1px;background:var(--border)}
+.exp-item{position:relative;padding:0 0 3rem 2.5rem;opacity:0;transform:translateY(20px);transition:opacity 0.6s ease,transform 0.6s ease}
+.exp-item.visible{opacity:1;transform:none}
+.exp-item::before{content:'';position:absolute;left:-4px;top:6px;width:9px;height:9px;border-radius:50%;background:var(--paper);border:2px solid var(--border);transition:all 0.3s}
+.exp-item:hover::before{background:var(--gold);border-color:var(--gold)}
+.exp-item:last-child{padding-bottom:0}
+.exp-header{display:flex;justify-content:space-between;align-items:flex-start;flex-wrap:wrap;gap:0.5rem;margin-bottom:0.3rem}
+.exp-role{font-size:1.05rem;font-weight:600;color:var(--ink)}
+.exp-period{font-family:'JetBrains Mono',monospace;font-size:0.72rem;color:var(--gold);background:rgba(201,151,58,0.1);border:1px solid rgba(201,151,58,0.2);padding:0.2rem 0.7rem;border-radius:20px}
+.exp-company{font-size:0.88rem;color:var(--gold);font-weight:500;margin-bottom:0.8rem}
+.exp-desc{font-size:0.9rem;color:var(--ink2);line-height:1.75}
+.exp-tags{display:flex;flex-wrap:wrap;gap:0.4rem;margin-top:0.9rem}
+.exp-tag{font-size:0.72rem;padding:0.2rem 0.65rem;border-radius:2px;background:var(--white);border:1px solid var(--border);color:var(--ink2)}
+
+/* SKILLS */
+#skills{background:var(--ink)}
+#skills .section-title{color:var(--white)}
+#skills .section-title em{color:var(--gold)}
+#skills .section-tag{color:var(--gold)}
+.skills-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:rgba(255,255,255,0.06)}
+.skill-block{background:var(--ink);padding:2.5rem 2rem;opacity:0;transform:translateY(20px);transition:opacity 0.5s ease,transform 0.5s ease}
+.skill-block.visible{opacity:1;transform:none}
+.skill-block:hover{background:#201e18}
+.skill-icon{font-size:1.8rem;margin-bottom:1.2rem;display:block}
+.skill-name{font-size:1rem;font-weight:600;color:var(--white);margin-bottom:0.5rem}
+.skill-desc{font-size:0.85rem;color:rgba(255,255,255,0.45);line-height:1.7;margin-bottom:1.2rem}
+.skill-pills{display:flex;flex-wrap:wrap;gap:0.35rem}
+.skill-pill{font-size:0.7rem;padding:0.2rem 0.6rem;border-radius:1px;background:rgba(201,151,58,0.1);border:1px solid rgba(201,151,58,0.2);color:var(--gold2)}
+
+/* CAMPAIGNS */
+#campaigns{background:var(--white)}
+.campaigns-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:1.5rem}
+.campaign-card{border:1px solid var(--border);border-radius:4px;padding:2.5rem;position:relative;overflow:hidden;opacity:0;transform:translateY(20px);transition:opacity 0.5s ease,transform 0.5s ease}
+.campaign-card.visible{opacity:1;transform:none}
+.campaign-card::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--gold),var(--gold2));transform:scaleX(0);transform-origin:left;transition:transform 0.4s}
+.campaign-card:hover{border-color:rgba(201,151,58,0.4);box-shadow:0 8px 40px rgba(28,26,23,0.08);transform:translateY(-4px)}
+.campaign-card:hover::before{transform:scaleX(1)}
+.campaign-num{font-family:'JetBrains Mono',monospace;font-size:0.65rem;letter-spacing:0.2em;color:var(--gold);margin-bottom:1rem;text-transform:uppercase}
+.campaign-title{font-size:1.05rem;font-weight:600;color:var(--ink);margin-bottom:0.6rem}
+.campaign-desc{font-size:0.88rem;color:var(--ink2);line-height:1.75}
+.campaign-footer{margin-top:1.2rem;padding-top:1.2rem;border-top:1px solid var(--border)}
+.campaign-metrics{display:flex;gap:1.5rem}
+.metric{text-align:center}
+.metric-val{font-family:'Cormorant Garamond',serif;font-size:1.5rem;font-weight:700;color:var(--gold);display:block}
+.metric-lab{font-size:0.68rem;color:var(--ink2);letter-spacing:0.08em;text-transform:uppercase}
+
+/* EDUCATION */
+#education{background:var(--paper)}
+.edu-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:1.5rem}
+.edu-card{background:var(--white);border:1px solid var(--border);border-radius:4px;padding:2.5rem;opacity:0;transform:translateY(20px);transition:opacity 0.5s ease,transform 0.5s ease}
+.edu-card.visible{opacity:1;transform:none}
+.edu-card:hover{border-color:rgba(201,151,58,0.3);box-shadow:var(--shadow)}
+.edu-year{font-family:'JetBrains Mono',monospace;font-size:0.68rem;letter-spacing:0.15em;color:var(--gold);text-transform:uppercase;margin-bottom:0.8rem}
+.edu-degree{font-size:1.05rem;font-weight:600;color:var(--ink);margin-bottom:0.3rem}
+.edu-school{font-size:0.9rem;color:var(--gold);font-weight:500;margin-bottom:0.8rem}
+.edu-spec{font-size:0.85rem;color:var(--ink2);line-height:1.6}
+
+/* ACHIEVEMENTS */
+#achievements{background:var(--white)}
+.achievements-list{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem}
+.achievement-item{background:var(--paper);border:1px solid var(--border);border-radius:4px;padding:2rem;display:flex;flex-direction:column;gap:0.8rem;opacity:0;transform:translateY(20px);transition:opacity 0.5s ease,transform 0.5s ease}
+.achievement-item.visible{opacity:1;transform:none}
+.achievement-item:hover{border-color:rgba(201,151,58,0.35);box-shadow:var(--shadow)}
+.ach-icon{font-size:1.5rem}
+.ach-title{font-size:0.95rem;font-weight:600;color:var(--ink)}
+.ach-desc{font-size:0.84rem;color:var(--ink2);line-height:1.7}
+
+/* CONTACT */
+#contact{background:var(--ink);position:relative;overflow:hidden}
+#contact::before{content:'';position:absolute;top:-40%;right:-20%;width:500px;height:500px;border-radius:50%;background:radial-gradient(circle,rgba(201,151,58,0.07) 0%,transparent 70%);pointer-events:none}
+.contact-grid{display:grid;grid-template-columns:1.2fr 1fr;gap:5rem;align-items:center}
+#contact .section-title{color:var(--white)}
+#contact .section-title em{color:var(--gold)}
+#contact .section-tag{color:var(--gold)}
+.contact-text{font-size:1rem;color:rgba(255,255,255,0.5);line-height:1.8;margin-bottom:2.5rem}
+.contact-links{display:flex;flex-direction:column;gap:0.8rem}
+.contact-link{display:flex;align-items:center;gap:1rem;padding:1rem 1.4rem;border:1px solid rgba(255,255,255,0.08);border-radius:3px;color:rgba(255,255,255,0.65);text-decoration:none;font-size:0.9rem;transition:all 0.3s}
+.contact-link:hover{border-color:var(--gold);color:var(--white);background:rgba(201,151,58,0.06);transform:translateX(4px)}
+.contact-link .ci{font-size:1rem;width:20px;text-align:center}
+.contact-card{background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.08);border-radius:4px;padding:3rem;text-align:center;width:100%}
+.contact-card-name{font-family:'Cormorant Garamond',serif;font-size:2rem;font-weight:700;color:var(--white);margin-bottom:0.3rem}
+.contact-card-title{font-size:0.8rem;color:var(--gold);letter-spacing:0.12em;text-transform:uppercase;margin-bottom:2rem}
+.contact-card-divider{width:40px;height:1px;background:rgba(255,255,255,0.15);margin:0 auto 2rem}
+.resume-btn{display:inline-flex;align-items:center;gap:0.6rem;padding:1rem 2rem;background:var(--gold);color:var(--ink);border-radius:2px;font-size:0.82rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;text-decoration:none;transition:all 0.3s}
+.resume-btn:hover{background:var(--gold2);transform:translateY(-2px);box-shadow:0 8px 24px rgba(201,151,58,0.3)}
+
+/* FOOTER */
+footer{background:#141210;padding:1.8rem 3.5rem;display:flex;justify-content:space-between;align-items:center;border-top:1px solid rgba(255,255,255,0.05);position:relative;z-index:1}
+.footer-copy{font-size:0.78rem;color:rgba(255,255,255,0.25)}
+.footer-brand{font-family:'Cormorant Garamond',serif;font-size:1.1rem;font-weight:700;color:var(--gold)}
+
+@keyframes slideIn{from{opacity:0;transform:translateY(28px)}to{opacity:1;transform:translateY(0)}}
+@keyframes fadeIn{from{opacity:0}to{opacity:1}}
+
+@media(max-width:1024px){
+  #hero{grid-template-columns:1fr}
+  .hero-right{display:none}
+  .about-grid{grid-template-columns:1fr;gap:3rem}
+  .skills-grid{grid-template-columns:repeat(2,1fr)}
+}
+@media(max-width:768px){
+  nav{padding:1rem 1.5rem}
+  .nav-links{display:none}
+  .hero-left{padding:8rem 1.8rem 4rem}
+  .section-inner{padding:4rem 1.8rem}
+  .campaigns-grid,.edu-grid,.achievements-list,.contact-grid{grid-template-columns:1fr}
+  .skills-grid{grid-template-columns:1fr}
+  footer{flex-direction:column;gap:0.5rem;text-align:center}
+}
+</style>
+</head>
+<body>
+
+<nav id="navbar">
+  <a href="#" class="nav-logo">AK<span>P</span></a>
+  <ul class="nav-links">
+    <li><a href="#about">About</a></li>
+    <li><a href="#experience">Experience</a></li>
+    <li><a href="#skills">Skills</a></li>
+    <li><a href="#campaigns">Campaigns</a></li>
+    <li><a href="#education">Education</a></li>
+    <li><a href="#contact" class="nav-cta">Hire Me</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<section id="hero">
+  <div class="hero-left">
+    <div class="hero-eyebrow">Performance Marketing Specialist</div>
+    <h1 class="hero-name">Aman<br/>Kumar<br/><em>Pathak</em></h1>
+    <p class="hero-role">
+      Meta Ads · Google Ads · Social Media Management<br/>
+      MBA in Marketing &amp; Operations — driving brand growth through data-driven digital campaigns and measurable ROI.
+    </p>
+    <div class="hero-meta">
+      <div class="hero-chip"><span class="dot"></span>&nbsp;Open to Opportunities</div>
+      <div class="hero-chip">📍 India</div>
+      <div class="hero-chip">🎓 MBA — Marketing &amp; Ops</div>
+    </div>
+    <div class="hero-btns">
+      <a href="resume.html" class="btn btn-dark" target="_blank">View Resume ↗</a>
+      <a href="https://www.linkedin.com/in/aman-pathak8" class="btn btn-outline" target="_blank">LinkedIn →</a>
+    </div>
+  </div>
+  <div class="hero-right">
+    <div class="hero-photo-frame">
+      <img src="https://avatars.githubusercontent.com/u/287376212?v=4" alt="Aman Kumar Pathak"
+        onerror="this.outerHTML='<div class=\'hero-photo-initials\'>AKP</div>'"/>
+    </div>
+    <div class="hero-stats">
+      <div class="hero-stat"><span class="stat-n">6</span><span class="stat-l">Brands Managed</span></div>
+      <div class="hero-stat"><span class="stat-n">3+</span><span class="stat-l">Yrs Experience</span></div>
+      <div class="hero-stat"><span class="stat-n">Meta</span><span class="stat-l">Ads Expert</span></div>
+      <div class="hero-stat"><span class="stat-n">MBA</span><span class="stat-l">Marketing &amp; Ops</span></div>
+    </div>
+    <div class="hero-available"><div class="pulse"></div>Available for new roles</div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section id="about">
+  <div class="section-inner">
+    <div class="about-grid">
+      <div class="about-body">
+        <div class="section-header" style="margin-bottom:2rem">
+          <p class="section-tag">01 — About</p>
+          <h2 class="section-title">Performance-first<br/><em>Digital Marketer</em></h2>
+        </div>
+        <p>MBA graduate in Marketing &amp; Operations with hands-on experience managing <strong>6 healthcare brands</strong> across Meta Ads, Google Ads, and social media — driving measurable growth in reach, leads, and digital engagement.</p>
+        <p>I specialize in <strong>full-funnel performance marketing</strong>: from audience research and creative strategy to campaign execution, A/B testing, and ROAS-focused optimization. Every campaign I run is tied to a business objective.</p>
+        <p>Across three organizations — a healthcare group, a digital agency, and a marketing firm — I've built practical expertise in <strong>Meta Ads, Google Ads, SEO, lead generation, content strategy, and social media growth</strong> that delivers real commercial results.</p>
+      </div>
+      <div class="about-aside">
+        <div class="aside-card">
+          <div class="aside-card-label">Contact Info</div>
+          <div class="info-row"><span class="icon">📧</span><a href="mailto:pathakaman821@gmail.com">pathakaman821@gmail.com</a></div>
+          <div class="info-row"><span class="icon">🔗</span><a href="https://www.linkedin.com/in/aman-pathak8" target="_blank">linkedin.com/in/aman-pathak8</a></div>
+          <div class="info-row"><span class="icon">🐙</span><a href="https://github.com/pathakaman821" target="_blank">github.com/pathakaman821</a></div>
+          <div class="info-row"><span class="icon">📍</span>India</div>
+        </div>
+        <div class="aside-card">
+          <div class="aside-card-label">Core Expertise</div>
+          <div class="info-row"><span class="icon">🎯</span>Meta Ads (Facebook &amp; Instagram)</div>
+          <div class="info-row"><span class="icon">🔍</span>Google Ads — Search &amp; Display</div>
+          <div class="info-row"><span class="icon">📱</span>Social Media Management</div>
+          <div class="info-row"><span class="icon">📊</span>Performance Analytics &amp; ROAS</div>
+          <div class="info-row"><span class="icon">✍️</span>Content Strategy &amp; Copywriting</div>
+          <div class="info-row"><span class="icon">🚀</span>Lead Generation &amp; SEO</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- EXPERIENCE -->
+<section id="experience">
+  <div class="section-inner">
+    <div class="section-header">
+      <p class="section-tag">02 — Experience</p>
+      <h2 class="section-title">Where I've<br/><em>Driven Growth</em></h2>
+    </div>
+    <div class="exp-timeline">
+      <div class="exp-item">
+        <div class="exp-header">
+          <div class="exp-role">Social Media Manager</div>
+          <div class="exp-period">Current</div>
+        </div>
+        <div class="exp-company">Care Health Nurses Pvt Ltd</div>
+        <div class="exp-desc">Managing digital presence and paid campaigns for <strong>6 healthcare brands</strong> simultaneously. Responsible for end-to-end campaign execution — content strategy, Meta Ads, Google Ads, audience development, engagement growth, and performance reporting across all brands.</div>
+        <div class="exp-tags">
+          <span class="exp-tag">Meta Ads</span><span class="exp-tag">Google Ads</span>
+          <span class="exp-tag">6 Brands</span><span class="exp-tag">Healthcare</span>
+          <span class="exp-tag">Content Strategy</span><span class="exp-tag">Campaign Management</span>
+        </div>
+      </div>
+      <div class="exp-item">
+        <div class="exp-header">
+          <div class="exp-role">Social Media Manager</div>
+          <div class="exp-period">Previous</div>
+        </div>
+        <div class="exp-company">LDelight Solution Pvt Ltd</div>
+        <div class="exp-desc">Managed multiple brand campaigns with a focus on social media growth, performance marketing, Meta advertising, and digital brand positioning. Developed data-driven content strategies and ran A/B tests on creatives and audiences to optimize paid campaign performance.</div>
+        <div class="exp-tags">
+          <span class="exp-tag">Brand Campaigns</span><span class="exp-tag">Meta Advertising</span>
+          <span class="exp-tag">A/B Testing</span><span class="exp-tag">Brand Positioning</span>
+        </div>
+      </div>
+      <div class="exp-item">
+        <div class="exp-header">
+          <div class="exp-role">Digital Marketing Executive</div>
+          <div class="exp-period">1+ Year</div>
+        </div>
+        <div class="exp-company">Monetiscope LLP</div>
+        <div class="exp-desc">Client management, digital lead generation, LinkedIn marketing, social media execution, and business development support. Built and managed lead generation funnels and performance-driven campaigns for B2B and B2C clients across industries.</div>
+        <div class="exp-tags">
+          <span class="exp-tag">Lead Generation</span><span class="exp-tag">LinkedIn Marketing</span>
+          <span class="exp-tag">Client Management</span><span class="exp-tag">B2B Marketing</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SKILLS -->
+<section id="skills">
+  <div class="section-inner">
+    <div class="section-header">
+      <p class="section-tag">03 — Skills</p>
+      <h2 class="section-title">What I<br/><em>Bring to the Table</em></h2>
+    </div>
+    <div class="skills-grid">
+      <div class="skill-block">
+        <span class="skill-icon">🚀</span>
+        <div class="skill-name">Paid Performance Marketing</div>
+        <div class="skill-desc">Full-funnel campaign management — strategy, setup, creative testing, budget control, and ROAS-focused optimization.</div>
+        <div class="skill-pills"><span class="skill-pill">Meta Ads</span><span class="skill-pill">Google Ads</span><span class="skill-pill">A/B Testing</span><span class="skill-pill">ROAS</span><span class="skill-pill">Retargeting</span></div>
+      </div>
+      <div class="skill-block">
+        <span class="skill-icon">📱</span>
+        <div class="skill-name">Social Media Management</div>
+        <div class="skill-desc">Platform strategy, content calendars, community engagement, and brand voice consistency across all key channels.</div>
+        <div class="skill-pills"><span class="skill-pill">Instagram</span><span class="skill-pill">Facebook</span><span class="skill-pill">LinkedIn</span><span class="skill-pill">Content Calendar</span></div>
+      </div>
+      <div class="skill-block">
+        <span class="skill-icon">🎯</span>
+        <div class="skill-name">Lead Generation</div>
+        <div class="skill-desc">Building full-funnel lead systems — lead ads, landing pages, nurturing sequences, and conversion tracking.</div>
+        <div class="skill-pills"><span class="skill-pill">Meta Lead Ads</span><span class="skill-pill">Funnel Building</span><span class="skill-pill">LinkedIn Leads</span><span class="skill-pill">B2B &amp; B2C</span></div>
+      </div>
+      <div class="skill-block">
+        <span class="skill-icon">📊</span>
+        <div class="skill-name">Analytics &amp; Reporting</div>
+        <div class="skill-desc">Turning campaign data into clear business insights — performance dashboards, audience analysis, and trend reporting.</div>
+        <div class="skill-pills"><span class="skill-pill">Meta Business Suite</span><span class="skill-pill">Google Analytics</span><span class="skill-pill">Excel Analytics</span><span class="skill-pill">Pixel Setup</span></div>
+      </div>
+      <div class="skill-block">
+        <span class="skill-icon">✍️</span>
+        <div class="skill-name">Content &amp; Copywriting</div>
+        <div class="skill-desc">Ad copies, captions, and brand content written with audience psychology and platform behavior in mind to drive conversions.</div>
+        <div class="skill-pills"><span class="skill-pill">Ad Copywriting</span><span class="skill-pill">Brand Messaging</span><span class="skill-pill">SEO Writing</span><span class="skill-pill">Canva</span></div>
+      </div>
+      <div class="skill-block">
+        <span class="skill-icon">🔍</span>
+        <div class="skill-name">SEO &amp; Brand Growth</div>
+        <div class="skill-desc">Organic search optimization, keyword research, on-page SEO, and integrated growth strategies combining paid and organic.</div>
+        <div class="skill-pills"><span class="skill-pill">On-Page SEO</span><span class="skill-pill">Keyword Research</span><span class="skill-pill">Brand Strategy</span><span class="skill-pill">Audience Targeting</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CAMPAIGNS -->
+<section id="campaigns">
+  <div class="section-inner">
+    <div class="section-header">
+      <p class="section-tag">04 — Campaigns &amp; Projects</p>
+      <h2 class="section-title">Work That<br/><em>Delivered Results</em></h2>
+    </div>
+    <div class="campaigns-grid">
+      <div class="campaign-card">
+        <div class="campaign-num">Campaign 01 · Healthcare · Current</div>
+        <div class="campaign-title">6 Healthcare Brand Campaigns — Care Health Nurses</div>
+        <div class="campaign-desc">Managed end-to-end digital marketing for 6 healthcare brands simultaneously. Developed content strategies, ran Meta Ads for awareness and lead generation, and grew organic social audiences across Instagram and Facebook — maintaining consistent brand voice across all healthcare verticals.</div>
+        <div class="campaign-footer">
+          <div class="campaign-metrics">
+            <div class="metric"><span class="metric-val">6</span><span class="metric-lab">Brands</span></div>
+            <div class="metric"><span class="metric-val">Meta</span><span class="metric-lab">Platform</span></div>
+            <div class="metric"><span class="metric-val">↑</span><span class="metric-lab">Reach &amp; Leads</span></div>
+          </div>
+        </div>
+      </div>
+      <div class="campaign-card">
+        <div class="campaign-num">Campaign 02 · Agency · Multi-Brand</div>
+        <div class="campaign-title">Performance Marketing — LDelight Solution</div>
+        <div class="campaign-desc">Managed paid and organic campaigns for multiple brand clients. Focused on Meta advertising, audience segmentation, and brand positioning. Ran A/B tests on ad creatives and audiences to improve conversion rates and reduce cost per lead across different industries.</div>
+        <div class="campaign-footer">
+          <div class="campaign-metrics">
+            <div class="metric"><span class="metric-val">A/B</span><span class="metric-lab">Testing</span></div>
+            <div class="metric"><span class="metric-val">↓CPL</span><span class="metric-lab">Cost Per Lead</span></div>
+            <div class="metric"><span class="metric-val">Multi</span><span class="metric-lab">Clients</span></div>
+          </div>
+        </div>
+      </div>
+      <div class="campaign-card">
+        <div class="campaign-num">Campaign 03 · B2B · Lead Generation</div>
+        <div class="campaign-title">LinkedIn &amp; Digital Lead Gen — Monetiscope LLP</div>
+        <div class="campaign-desc">Built B2B lead generation systems using LinkedIn marketing and digital channels. Managed client accounts, created lead nurturing workflows, and executed social campaigns. Supported business development through strategic digital outreach and content-driven lead generation.</div>
+        <div class="campaign-footer">
+          <div class="campaign-metrics">
+            <div class="metric"><span class="metric-val">B2B</span><span class="metric-lab">Segment</span></div>
+            <div class="metric"><span class="metric-val">LinkedIn</span><span class="metric-lab">Channel</span></div>
+            <div class="metric"><span class="metric-val">1+Yr</span><span class="metric-lab">Duration</span></div>
+          </div>
+        </div>
+      </div>
+      <div class="campaign-card">
+        <div class="campaign-num">Project 04 · Healthcare · Digital</div>
+        <div class="campaign-title">Healthcare Digital Campaigns — Social Growth</div>
+        <div class="campaign-desc">Planned and executed social media growth campaigns for healthcare brands — growing follower base, improving content engagement, and building brand authority in the healthcare digital space through a combination of organic content and targeted paid promotion.</div>
+        <div class="campaign-footer">
+          <div class="campaign-metrics">
+            <div class="metric"><span class="metric-val">↑</span><span class="metric-lab">Followers</span></div>
+            <div class="metric"><span class="metric-val">↑</span><span class="metric-lab">Engagement</span></div>
+            <div class="metric"><span class="metric-val">Brand</span><span class="metric-lab">Authority</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- EDUCATION -->
+<section id="education">
+  <div class="section-inner">
+    <div class="section-header">
+      <p class="section-tag">05 — Education</p>
+      <h2 class="section-title">Academic<br/><em>Foundation</em></h2>
+    </div>
+    <div class="edu-grid">
+      <div class="edu-card">
+        <div class="edu-year">2023 – 2025</div>
+        <div class="edu-degree">Master of Business Administration (MBA)</div>
+        <div class="edu-school">ABES Business School</div>
+        <div class="edu-spec">Specialization in <strong>Marketing &amp; Operations</strong> — consumer behavior, digital marketing, brand strategy, operations management, business analytics, and market research.</div>
+      </div>
+      <div class="edu-card">
+        <div class="edu-year">Undergraduate</div>
+        <div class="edu-degree">Bachelor of Business Administration (BBA)</div>
+        <div class="edu-school">Business Management</div>
+        <div class="edu-spec">Foundation in business management, marketing principles, organizational behavior, and professional business communication.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ACHIEVEMENTS -->
+<section id="achievements">
+  <div class="section-inner">
+    <div class="section-header">
+      <p class="section-tag">06 — Achievements</p>
+      <h2 class="section-title">Key<br/><em>Milestones</em></h2>
+    </div>
+    <div class="achievements-list">
+      <div class="achievement-item">
+        <div class="ach-icon">🏥</div>
+        <div class="ach-title">Managed 6 Healthcare Brands Digitally</div>
+        <div class="ach-desc">Simultaneously managed digital marketing for 6 healthcare brands — growing their online presence through Meta Ads, Google Ads, and strategic social media management.</div>
+      </div>
+      <div class="achievement-item">
+        <div class="ach-icon">📈</div>
+        <div class="ach-title">3 Organizations — Consistent Performance Results</div>
+        <div class="ach-desc">Built real-world digital marketing expertise across a healthcare group, digital agency, and marketing firm — delivering measurable results in each environment.</div>
+      </div>
+      <div class="achievement-item">
+        <div class="ach-icon">🎓</div>
+        <div class="ach-title">MBA — Marketing &amp; Operations, ABES Business School</div>
+        <div class="ach-desc">Completed MBA with dual specialization in Marketing and Operations, bridging strategic business thinking with hands-on digital marketing execution.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+  <div class="section-inner">
+    <div class="contact-grid">
+      <div class="contact-left">
+        <p class="section-tag">07 — Contact</p>
+        <h2 class="section-title" style="margin-bottom:1.5rem">Let's Build<br/><em>Something Great</em></h2>
+        <p class="contact-text">Open to full-time roles in Performance Marketing, Social Media Management, Digital Strategy, and Brand Growth. Let's talk about how I can drive measurable results for your brand.</p>
+        <div class="contact-links">
+          <a href="mailto:pathakaman821@gmail.com" class="contact-link"><span class="ci">📧</span>pathakaman821@gmail.com</a>
+          <a href="https://www.linkedin.com/in/aman-pathak8" class="contact-link" target="_blank"><span class="ci">🔗</span>linkedin.com/in/aman-pathak8</a>
+          <a href="https://github.com/pathakaman821" class="contact-link" target="_blank"><span class="ci">🐙</span>github.com/pathakaman821</a>
+        </div>
+      </div>
+      <div style="display:flex;flex-direction:column;align-items:center;justify-content:center;gap:2rem">
+        <div class="contact-card">
+          <div class="contact-card-name">Aman Kumar Pathak</div>
+          <div class="contact-card-title">Performance Marketing Specialist</div>
+          <div class="contact-card-divider"></div>
+          <a href="resume.html" class="resume-btn" target="_blank">↓ View Resume</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-copy">© 2026 Aman Kumar Pathak · Performance Marketing Specialist</div>
+  <div class="footer-brand">AKP.</div>
+</footer>
+
+<script>
+const nav = document.getElementById('navbar');
+window.addEventListener('scroll', () => { nav.classList.toggle('scrolled', window.scrollY > 60); });
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach((entry, i) => {
+    if (entry.isIntersecting) { setTimeout(() => entry.target.classList.add('visible'), i * 90); }
+  });
+}, { threshold: 0.1 });
+document.querySelectorAll('.exp-item,.skill-block,.campaign-card,.edu-card,.achievement-item').forEach(el => observer.observe(el));
+</script>
+</body>
+</html>
