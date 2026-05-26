@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Projects — Aman Kumar Pathak</title>
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:ital,wght@0,300;0,400;0,500;0,700;1,300&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    .proj-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; }
+    .proj-card {
+      background: var(--card); border: 1px solid var(--border);
+      display: flex; flex-direction: column; overflow: hidden;
+      transition: border-color 0.2s, transform 0.2s;
+    }
+    .proj-card:hover { border-color: rgba(255,77,0,0.45); transform: translateY(-5px); }
+    .proj-banner {
+      height: 6px;
+      background: linear-gradient(90deg, var(--accent), var(--accent2));
+    }
+    .proj-body { padding: 1.75rem; flex: 1; display: flex; flex-direction: column; }
+    .proj-num {
+      font-family: 'Bebas Neue', sans-serif; font-size: 0.85rem;
+      color: var(--muted); letter-spacing: 2px; margin-bottom: 0.5rem;
+    }
+    .proj-category {
+      display: inline-block; font-size: 0.7rem; font-weight: 600; letter-spacing: 1.5px;
+      text-transform: uppercase; padding: 0.22rem 0.7rem; margin-bottom: 1rem;
+      background: rgba(255,77,0,0.08); color: var(--accent2);
+      border: 1px solid rgba(255,77,0,0.2);
+    }
+    .proj-card h3 { font-size: 1.15rem; font-weight: 700; margin-bottom: 0.75rem; }
+    .proj-desc { font-size: 0.875rem; color: #999; line-height: 1.75; margin-bottom: 1.25rem; flex: 1; }
+    .proj-outcomes { list-style: none; margin-bottom: 1.5rem; display: flex; flex-direction: column; gap: 0.4rem; }
+    .proj-outcomes li { font-size: 0.83rem; color: #ccc; display: flex; gap: 0.6rem; }
+    .proj-outcomes li::before { content: '✓'; color: var(--accent); font-weight: 700; min-width: 1rem; }
+    .proj-footer { display: flex; flex-wrap: wrap; gap: 0.5rem; padding-top: 1.25rem; border-top: 1px solid var(--border); }
+
+    .mini-grid { display: grid; grid-template-columns: repeat(auto-fit,minmax(240px,1fr)); gap: 1.25rem; }
+    .mini-card {
+      background: var(--card); border: 1px solid var(--border); padding: 1.5rem;
+      transition: border-color 0.2s, transform 0.2s;
+    }
+    .mini-card:hover { border-color: rgba(255,77,0,0.35); transform: translateY(-3px); }
+    .mini-card h4 { font-size: 0.95rem; font-weight: 600; margin-bottom: 0.4rem; }
+    .mini-card p { font-size: 0.82rem; color: var(--muted); line-height: 1.6; }
+    .mini-icon { font-size: 1.5rem; margin-bottom: 0.6rem; }
+
+    @media(max-width:768px){.proj-grid{grid-template-columns:1fr;}}
+  </style>
+</head>
+<body>
+
+  <nav>
+    <a href="index.html" class="nav-logo">AKP<span>.</span></a>
+    <ul class="nav-links">
+      <li><a href="about.html">About</a></li>
+      <li><a href="experience.html">Experience</a></li>
+      <li><a href="campaigns.html">Campaigns</a></li>
+      <li><a href="projects.html">Projects</a></li>
+      <li><a href="skills.html">Skills</a></li>
+      <li><a href="certifications.html">Certifications</a></li>
+      <li><a href="index.html#contact" class="btn-primary" style="padding:0.4rem 1rem;font-size:0.78rem">Hire Me</a></li>
+    </ul>
+    <button class="nav-hamburger" aria-label="Menu"><span></span><span></span><span></span></button>
+  </nav>
+
+  <div class="page-hero">
+    <div class="page-hero-bg"></div>
+    <div class="page-hero-grid"></div>
+    <div class="page-hero-inner">
+      <div class="breadcrumb"><a href="index.html">Home</a> / Projects</div>
+      <h1 class="page-title">Marketing <span>Projects</span></h1>
+      <p class="page-subtitle">Strategy-led marketing projects, brand growth case studies, and digital marketing initiatives.</p>
+    </div>
+  </div>
+
+  <!-- MAIN PROJECTS -->
+  <div class="section">
+    <div class="section-label">Featured Work</div>
+    <h2 class="section-title">Case Studies</h2>
+    <p class="section-sub">In-depth projects that showcase strategy, execution, and measurable outcomes.</p>
+
+    <div class="proj-grid">
+
+      <div class="proj-card reveal">
+        <div class="proj-banner"></div>
+        <div class="proj-body">
+          <div class="proj-num">PROJECT 01</div>
+          <span class="proj-category">Meta Ads · Lead Gen</span>
+          <h3>Real Estate Full-Funnel Lead Generation System</h3>
+          <p class="proj-desc">Designed and executed a complete lead generation system for a real estate developer. Built a multi-stage funnel using Facebook &amp; Instagram ads, tested 15+ creative variants, and set up automated follow-up sequences via CRM integration to improve lead-to-visit conversion rates.</p>
+          <ul class="proj-outcomes">
+            <li>Reduced CPL from ₹450 to ₹180 over 45 days of testing</li>
+            <li>Generated 1,200+ qualified property inquiries in 3 months</li>
+            <li>Lookalike audiences built from CRM data outperformed interest targeting by 2.3×</li>
+            <li>Site visits from ad leads increased by 40% after creative refresh</li>
+          </ul>
+          <div class="proj-footer">
+            <span class="tag-accent">Meta Ads</span><span class="tag-accent">Lead Funnel</span>
+            <span class="tag-accent">A/B Testing</span><span class="tag-accent">CRM Integration</span>
+            <span class="tag-accent">Real Estate</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="proj-card reveal">
+        <div class="proj-banner" style="background:linear-gradient(90deg,#4caf72,#34a853)"></div>
+        <div class="proj-body">
+          <div class="proj-num">PROJECT 02</div>
+          <span class="proj-category">Google Ads · E-Commerce</span>
+          <h3>E-Commerce Revenue Growth via Search &amp; Shopping Ads</h3>
+          <p class="proj-desc">Took over a struggling Google Ads account for a D2C product brand and rebuilt the campaign structure from scratch. Conducted comprehensive keyword research, restructured Shopping feeds, improved Quality Scores, and implemented a smart bidding strategy aligned to profit margins.</p>
+          <ul class="proj-outcomes">
+            <li>ROAS improved from 1.4× to 3.8× within 60 days of restructuring</li>
+            <li>Average CPC reduced by 30% through Quality Score improvements</li>
+            <li>Revenue from paid search doubled month-over-month for 2 consecutive months</li>
+            <li>Negative keyword list expanded to 200+ terms, eliminating wasted spend</li>
+          </ul>
+          <div class="proj-footer">
+            <span class="tag-accent">Google Ads</span><span class="tag-accent">Shopping Ads</span>
+            <span class="tag-accent">Smart Bidding</span><span class="tag-accent">ROAS Optimization</span>
+            <span class="tag-accent">E-Commerce</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="proj-card reveal">
+        <div class="proj-banner" style="background:linear-gradient(90deg,#b07ad9,#9c27b0)"></div>
+        <div class="proj-body">
+          <div class="proj-num">PROJECT 03</div>
+          <span class="proj-category">Social Media · Brand Growth</span>
+          <h3>Instagram Brand Building — Lifestyle Startup</h3>
+          <p class="proj-desc">Built the complete Instagram presence for a new lifestyle brand from zero. Developed brand visual identity guidelines, a 3-month content calendar, caption voice &amp; tone, hashtag strategy, and Stories framework. Also ran monthly paid boosts on top-performing organic posts.</p>
+          <ul class="proj-outcomes">
+            <li>Grew from 0 to 5,000+ followers organically in 90 days</li>
+            <li>Average post engagement rate of 10–14%, well above industry benchmark of 1–3%</li>
+            <li>Reel views consistently exceeded 15,000 per post by Month 2</li>
+            <li>Monthly paid story boosts generated 300+ profile visits at ₹2 CPV</li>
+          </ul>
+          <div class="proj-footer">
+            <span class="tag-accent">Instagram</span><span class="tag-accent">Content Strategy</span>
+            <span class="tag-accent">Brand Identity</span><span class="tag-accent">Reels</span>
+            <span class="tag-accent">Organic Growth</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="proj-card reveal">
+        <div class="proj-banner" style="background:linear-gradient(90deg,var(--accent),#e65c00)"></div>
+        <div class="proj-body">
+          <div class="proj-num">PROJECT 04</div>
+          <span class="proj-category">Multi-Channel · Strategy</span>
+          <h3>360° Digital Marketing Strategy — Education Brand</h3>
+          <p class="proj-desc">Developed and executed a full 360° digital marketing strategy for an education institute launching new professional courses. Combined organic social media, Meta Ads for awareness and leads, Google Ads for intent capture, WhatsApp follow-up automation, and weekly content publishing.</p>
+          <ul class="proj-outcomes">
+            <li>Generated 2,000+ course inquiry leads over the 2-month enrollment window</li>
+            <li>Combined CPL across all channels averaged ₹95, below ₹150 target</li>
+            <li>Facebook page grew by 800+ followers during the campaign period</li>
+            <li>Email list of 1,500+ warm prospects built for future enrollment cycles</li>
+          </ul>
+          <div class="proj-footer">
+            <span class="tag-accent">Multi-Channel</span><span class="tag-accent">Meta + Google</span>
+            <span class="tag-accent">WhatsApp Marketing</span><span class="tag-accent">Education</span>
+            <span class="tag-accent">Email Marketing</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- MINI PROJECTS -->
+  <div class="section section-alt">
+    <div class="section-label">Other Work</div>
+    <h2 class="section-title">Additional Projects</h2>
+    <p class="section-sub">Smaller initiatives, research work, and marketing deliverables.</p>
+    <div class="mini-grid">
+      <div class="mini-card reveal">
+        <div class="mini-icon">📝</div>
+        <h4>Brand Audit &amp; Strategy Report</h4>
+        <p>Comprehensive digital presence audit for a service business — covering website, social media, SEO, and paid ads with actionable recommendations.</p>
+      </div>
+      <div class="mini-card reveal">
+        <div class="mini-icon">🎨</div>
+        <h4>Ad Creative Development</h4>
+        <p>Designed 40+ ad creatives (static, carousel, stories) for various clients using Canva, optimised for Meta and Google Display placements.</p>
+      </div>
+      <div class="mini-card reveal">
+        <div class="mini-icon">📊</div>
+        <h4>Marketing Analytics Dashboard</h4>
+        <p>Built a consolidated performance dashboard tracking Meta Ads, Google Ads, and organic social KPIs in one view for a client with multiple channels.</p>
+      </div>
+      <div class="mini-card reveal">
+        <div class="mini-icon">✍️</div>
+        <h4>Content Marketing Calendar</h4>
+        <p>Created a 6-month editorial content calendar for a B2B services brand across LinkedIn, Instagram, and their company blog.</p>
+      </div>
+      <div class="mini-card reveal">
+        <div class="mini-icon">🔍</div>
+        <h4>SEO Content Audit</h4>
+        <p>Audited and rewrote landing page copy and blog content for a service website to improve organic search rankings and Quality Scores.</p>
+      </div>
+      <div class="mini-card reveal">
+        <div class="mini-icon">📱</div>
+        <h4>WhatsApp Marketing Campaign</h4>
+        <p>Set up and executed a WhatsApp broadcast campaign for lead nurturing, achieving a 45% message open rate and 12% follow-up booking rate.</p>
+      </div>
+    </div>
+  </div>
+
+  <footer>
+    <div class="footer-nav">
+      <a href="about.html">About</a><a href="experience.html">Experience</a>
+      <a href="campaigns.html">Campaigns</a><a href="projects.html">Projects</a>
+      <a href="skills.html">Skills</a><a href="certifications.html">Certifications</a>
+    </div>
+    <p>© 2025 <span>Aman Kumar Pathak</span> — Performance Marketing Specialist</p>
+  </footer>
+
+  <script src="nav.js"></script>
+</body>
+</html>

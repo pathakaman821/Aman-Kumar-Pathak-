@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Experience — Aman Kumar Pathak</title>
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:ital,wght@0,300;0,400;0,500;0,700;1,300&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    /* Timeline */
+    .timeline { position: relative; padding-left: 2.5rem; }
+    .timeline::before {
+      content: ''; position: absolute; left: 7px; top: 0; bottom: 0;
+      width: 1px; background: var(--border);
+    }
+    .timeline-item { position: relative; margin-bottom: 3rem; }
+    .timeline-dot {
+      position: absolute; left: -2.5rem; top: 0.4rem;
+      width: 14px; height: 14px; border-radius: 50%;
+      background: var(--bg); border: 2px solid var(--accent);
+    }
+    .timeline-dot.current { background: var(--accent); }
+    .timeline-card {
+      background: var(--card); border: 1px solid var(--border);
+      padding: 1.75rem; transition: border-color 0.2s, transform 0.2s;
+    }
+    .timeline-card:hover { border-color: rgba(255,77,0,0.4); transform: translateX(4px); }
+    .tc-header { display: flex; justify-content: space-between; align-items: flex-start; gap: 1rem; flex-wrap: wrap; margin-bottom: 0.75rem; }
+    .tc-role { font-size: 1.1rem; font-weight: 700; }
+    .tc-company { font-size: 0.95rem; color: var(--accent2); margin-bottom: 0.2rem; }
+    .tc-date {
+      font-size: 0.75rem; color: var(--muted); letter-spacing: 1px;
+      text-transform: uppercase; white-space: nowrap;
+      background: rgba(255,77,0,0.08); border: 1px solid rgba(255,77,0,0.2);
+      padding: 0.25rem 0.75rem; height: fit-content;
+    }
+    .tc-type { font-size: 0.72rem; color: var(--muted); margin-bottom: 1rem; }
+    .tc-body { font-size: 0.9rem; color: #bbb; line-height: 1.8; margin-bottom: 1rem; }
+    .tc-achievements { list-style: none; display: flex; flex-direction: column; gap: 0.5rem; margin-bottom: 1.25rem; }
+    .tc-achievements li {
+      display: flex; gap: 0.75rem; font-size: 0.875rem; color: #ccc; line-height: 1.6;
+    }
+    .tc-achievements li::before { content: '→'; color: var(--accent); min-width: 1.25rem; }
+    .tc-tags { display: flex; flex-wrap: wrap; gap: 0.5rem; }
+
+    .exp-sidebar { display: flex; flex-direction: column; gap: 1.5rem; }
+    .summary-box {
+      background: var(--card); border: 1px solid var(--border); padding: 1.5rem;
+      position: sticky; top: 5.5rem;
+    }
+    .summary-box h3 { font-size: 0.85rem; font-weight: 600; letter-spacing: 2px; text-transform: uppercase; color: var(--muted); margin-bottom: 1.25rem; }
+    .sum-stat { display: flex; justify-content: space-between; align-items: center; padding: 0.6rem 0; border-bottom: 1px solid var(--border); }
+    .sum-stat:last-child { border: none; }
+    .sum-val { font-family: 'Bebas Neue', sans-serif; font-size: 1.6rem; color: var(--accent); }
+    .sum-label { font-size: 0.8rem; color: var(--muted); }
+
+    .two-col { display: grid; grid-template-columns: 260px 1fr; gap: 3rem; align-items: start; }
+
+    @media(max-width:900px){
+      .two-col{grid-template-columns:1fr;}
+      .summary-box{position:static;}
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <a href="index.html" class="nav-logo">AKP<span>.</span></a>
+    <ul class="nav-links">
+      <li><a href="about.html">About</a></li>
+      <li><a href="experience.html">Experience</a></li>
+      <li><a href="campaigns.html">Campaigns</a></li>
+      <li><a href="projects.html">Projects</a></li>
+      <li><a href="skills.html">Skills</a></li>
+      <li><a href="certifications.html">Certifications</a></li>
+      <li><a href="index.html#contact" class="btn-primary" style="padding:0.4rem 1rem;font-size:0.78rem">Hire Me</a></li>
+    </ul>
+    <button class="nav-hamburger" aria-label="Menu"><span></span><span></span><span></span></button>
+  </nav>
+
+  <div class="page-hero">
+    <div class="page-hero-bg"></div>
+    <div class="page-hero-grid"></div>
+    <div class="page-hero-inner">
+      <div class="breadcrumb"><a href="index.html">Home</a> / Experience</div>
+      <h1 class="page-title">Work <span>Experience</span></h1>
+      <p class="page-subtitle">My professional journey in digital marketing, paid advertising, and brand growth.</p>
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="two-col">
+
+      <!-- SIDEBAR -->
+      <div class="exp-sidebar">
+        <div class="summary-box reveal">
+          <h3>Summary</h3>
+          <div class="sum-stat"><span class="sum-label">Years in Marketing</span><span class="sum-val">2+</span></div>
+          <div class="sum-stat"><span class="sum-label">Campaigns Run</span><span class="sum-val">20+</span></div>
+          <div class="sum-stat"><span class="sum-label">Leads Generated</span><span class="sum-val">10K+</span></div>
+          <div class="sum-stat"><span class="sum-label">Platforms</span><span class="sum-val">Meta &amp; Google</span></div>
+          <div class="sum-stat"><span class="sum-label">Education</span><span class="sum-val">MBA</span></div>
+        </div>
+      </div>
+
+      <!-- TIMELINE -->
+      <div>
+        <div class="section-label">Career Timeline</div>
+        <h2 class="section-title">Professional Journey</h2>
+        <div class="divider"></div>
+
+        <div class="timeline">
+
+          <div class="timeline-item reveal">
+            <div class="timeline-dot current"></div>
+            <div class="timeline-card">
+              <div class="tc-header">
+                <div>
+                  <div class="tc-role">Performance Marketing Specialist</div>
+                  <div class="tc-company">Freelance / Digital Marketing Consultant</div>
+                  <div class="tc-type">Freelance · Full-time</div>
+                </div>
+                <div class="tc-date">2023 – Present</div>
+              </div>
+              <p class="tc-body">Managing end-to-end paid media campaigns for clients across real estate, e-commerce, education, and service sectors. Responsible for campaign strategy, creative briefing, audience targeting, and performance reporting.</p>
+              <ul class="tc-achievements">
+                <li>Managed Meta &amp; Google Ads budgets ranging from ₹20K to ₹5L/month for multiple clients simultaneously</li>
+                <li>Reduced average CPL by 40–60% through rigorous A/B testing of audiences and ad creatives</li>
+                <li>Generated 10,000+ qualified leads across lead-gen campaigns in real estate and education verticals</li>
+                <li>Built and managed social media content calendars, growing client pages by 2–4× in 90 days</li>
+                <li>Delivered weekly performance reports with actionable insights and campaign recommendations</li>
+              </ul>
+              <div class="tc-tags">
+                <span class="tag-accent">Meta Ads</span><span class="tag-accent">Google Ads</span>
+                <span class="tag-accent">Lead Generation</span><span class="tag-accent">Social Media</span>
+                <span class="tag-accent">Analytics</span><span class="tag-accent">Client Management</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="timeline-item reveal">
+            <div class="timeline-dot"></div>
+            <div class="timeline-card">
+              <div class="tc-header">
+                <div>
+                  <div class="tc-role">Digital Marketing Executive</div>
+                  <div class="tc-company">Digital Marketing Agency</div>
+                  <div class="tc-type">Full-time · Agency</div>
+                </div>
+                <div class="tc-date">2022 – 2023</div>
+              </div>
+              <p class="tc-body">Worked as part of a performance marketing team handling paid social and search campaigns for agency clients. Gained hands-on experience managing multiple ad accounts simultaneously across diverse industries.</p>
+              <ul class="tc-achievements">
+                <li>Set up and optimised Facebook &amp; Instagram ad campaigns for 6+ brand clients</li>
+                <li>Conducted keyword research and managed Google Search campaigns to drive high-intent traffic</li>
+                <li>Collaborated on content strategy, copywriting, and creative development for social media pages</li>
+                <li>Produced regular performance dashboards tracking CPL, CTR, ROAS, and conversion data</li>
+              </ul>
+              <div class="tc-tags">
+                <span class="tag-accent">Meta Business Suite</span><span class="tag-accent">Google Ads Manager</span>
+                <span class="tag-accent">Content Creation</span><span class="tag-accent">Reporting</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="timeline-item reveal">
+            <div class="timeline-dot"></div>
+            <div class="timeline-card">
+              <div class="tc-header">
+                <div>
+                  <div class="tc-role">Social Media Manager</div>
+                  <div class="tc-company">Brand / Startup (Internship)</div>
+                  <div class="tc-type">Internship · Part-time</div>
+                </div>
+                <div class="tc-date">2021 – 2022</div>
+              </div>
+              <p class="tc-body">Managed organic social media presence across Instagram and Facebook for a growing brand. Responsible for content creation, scheduling, community management, and basic paid boosts.</p>
+              <ul class="tc-achievements">
+                <li>Grew Instagram follower base by 3× over 6 months through consistent content and engagement</li>
+                <li>Designed social creatives using Canva and wrote all post copy aligned to brand voice</li>
+                <li>Managed community inbox — responding to comments, DMs, and customer queries daily</li>
+                <li>Assisted with basic Facebook Ads boosting and monitored post performance metrics</li>
+              </ul>
+              <div class="tc-tags">
+                <span class="tag-accent">Instagram</span><span class="tag-accent">Facebook</span>
+                <span class="tag-accent">Canva</span><span class="tag-accent">Content Creation</span>
+                <span class="tag-accent">Community Management</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="timeline-item reveal">
+            <div class="timeline-dot"></div>
+            <div class="timeline-card">
+              <div class="tc-header">
+                <div>
+                  <div class="tc-role">MBA — Marketing &amp; Operations</div>
+                  <div class="tc-company">Post Graduate Business School</div>
+                  <div class="tc-type">Education</div>
+                </div>
+                <div class="tc-date">2020 – 2022</div>
+              </div>
+              <p class="tc-body">Completed MBA with dual specialisation in Marketing and Operations. Studied consumer behaviour, marketing strategy, brand management, digital marketing fundamentals, and business operations.</p>
+              <ul class="tc-achievements">
+                <li>Specialised in Marketing Strategy, Consumer Behaviour, and Brand Management</li>
+                <li>Completed coursework in Digital Marketing, Business Analytics, and Operations Management</li>
+                <li>Developed practical understanding of go-to-market strategy and campaign planning</li>
+              </ul>
+              <div class="tc-tags">
+                <span class="tag-accent">Marketing Strategy</span><span class="tag-accent">Brand Management</span>
+                <span class="tag-accent">Business Analytics</span><span class="tag-accent">Operations</span>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <footer>
+    <div class="footer-nav">
+      <a href="about.html">About</a><a href="experience.html">Experience</a>
+      <a href="campaigns.html">Campaigns</a><a href="projects.html">Projects</a>
+      <a href="skills.html">Skills</a><a href="certifications.html">Certifications</a>
+    </div>
+    <p>© 2025 <span>Aman Kumar Pathak</span> — Performance Marketing Specialist</p>
+  </footer>
+
+  <script src="nav.js"></script>
+</body>
+</html>

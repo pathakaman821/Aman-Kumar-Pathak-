@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>About — Aman Kumar Pathak</title>
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:ital,wght@0,300;0,400;0,500;0,700;1,300&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    .about-grid { display: grid; grid-template-columns: 1fr 1.4fr; gap: 4rem; align-items: start; }
+    .profile-box {
+      background: var(--card); border: 1px solid var(--border); padding: 2rem;
+      position: sticky; top: 5.5rem;
+    }
+    .profile-initials {
+      width: 90px; height: 90px; border-radius: 50%;
+      background: linear-gradient(135deg, var(--accent), var(--accent2));
+      display: flex; align-items: center; justify-content: center;
+      font-family: 'Bebas Neue', sans-serif; font-size: 2rem; letter-spacing: 2px;
+      margin-bottom: 1.25rem;
+    }
+    .profile-box h2 { font-size: 1.3rem; font-weight: 700; margin-bottom: 0.25rem; }
+    .profile-box .role { font-size: 0.85rem; color: var(--accent2); margin-bottom: 1.25rem; }
+    .profile-meta { display: flex; flex-direction: column; gap: 0.6rem; margin-bottom: 1.5rem; }
+    .meta-row { display: flex; gap: 0.6rem; align-items: center; font-size: 0.85rem; color: var(--muted); }
+    .meta-row span:first-child { min-width: 1.25rem; }
+    .profile-box .btn-primary { display: block; text-align: center; margin-top: 1rem; }
+
+    .about-body p { color: #bbb; font-size: 0.975rem; line-height: 1.85; margin-bottom: 1.25rem; }
+    .value-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-top: 2rem; }
+    .value-card {
+      background: var(--card); border: 1px solid var(--border);
+      padding: 1.25rem; transition: border-color 0.2s;
+    }
+    .value-card:hover { border-color: rgba(255,77,0,0.35); }
+    .value-card h4 { font-size: 0.92rem; font-weight: 600; margin-bottom: 0.35rem; }
+    .value-card p { font-size: 0.82rem; color: var(--muted); margin: 0; line-height: 1.6; }
+    .value-icon { font-size: 1.4rem; margin-bottom: 0.5rem; }
+
+    .edu-block { margin-top: 3rem; }
+    .edu-card {
+      background: var(--card); border: 1px solid var(--border); padding: 1.5rem;
+      display: flex; gap: 1.25rem; align-items: flex-start; margin-bottom: 1rem;
+      transition: border-color 0.2s;
+    }
+    .edu-card:hover { border-color: rgba(255,77,0,0.35); }
+    .edu-icon { font-size: 2rem; min-width: 2.5rem; }
+    .edu-card h4 { font-size: 1rem; font-weight: 600; margin-bottom: 0.2rem; }
+    .edu-card .inst { font-size: 0.85rem; color: var(--accent2); margin-bottom: 0.2rem; }
+    .edu-card .yr { font-size: 0.8rem; color: var(--muted); }
+
+    .interest-tags { display: flex; flex-wrap: wrap; gap: 0.6rem; margin-top: 1.25rem; }
+
+    @media(max-width:768px){
+      .about-grid{grid-template-columns:1fr;}
+      .profile-box{position:static;}
+      .value-grid{grid-template-columns:1fr;}
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <a href="index.html" class="nav-logo">AKP<span>.</span></a>
+    <ul class="nav-links">
+      <li><a href="about.html">About</a></li>
+      <li><a href="experience.html">Experience</a></li>
+      <li><a href="campaigns.html">Campaigns</a></li>
+      <li><a href="projects.html">Projects</a></li>
+      <li><a href="skills.html">Skills</a></li>
+      <li><a href="certifications.html">Certifications</a></li>
+      <li><a href="index.html#contact" class="btn-primary" style="padding:0.4rem 1rem;font-size:0.78rem">Hire Me</a></li>
+    </ul>
+    <button class="nav-hamburger" aria-label="Menu"><span></span><span></span><span></span></button>
+  </nav>
+
+  <div class="page-hero">
+    <div class="page-hero-bg"></div>
+    <div class="page-hero-grid"></div>
+    <div class="page-hero-inner">
+      <div class="breadcrumb"><a href="index.html">Home</a> / About</div>
+      <h1 class="page-title">About <span>Me</span></h1>
+      <p class="page-subtitle">MBA-trained performance marketer passionate about turning ad spend into measurable business growth.</p>
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="about-grid">
+
+      <!-- SIDEBAR -->
+      <div class="profile-box reveal">
+        <div class="profile-initials">AKP</div>
+        <h2>Aman Kumar Pathak</h2>
+        <p class="role">Performance Marketing Specialist</p>
+        <div class="profile-meta">
+          <div class="meta-row"><span>🎓</span><span>MBA — Marketing &amp; Operations</span></div>
+          <div class="meta-row"><span>📍</span><span>India</span></div>
+          <div class="meta-row"><span>📧</span><span>pathakaman821@gmail.com</span></div>
+          <div class="meta-row"><span>💼</span><span>Open to Opportunities</span></div>
+          <div class="meta-row"><span>⚡</span><span>Meta &amp; Google Ads Specialist</span></div>
+        </div>
+        <div class="interest-tags">
+          <span class="tag-accent">Meta Ads</span>
+          <span class="tag-accent">Google Ads</span>
+          <span class="tag-accent">Lead Gen</span>
+          <span class="tag-accent">Social Media</span>
+          <span class="tag-accent">Content</span>
+          <span class="tag-accent">Brand Strategy</span>
+        </div>
+        <a href="index.html#contact" class="btn-primary">Get In Touch</a>
+      </div>
+
+      <!-- MAIN CONTENT -->
+      <div class="about-body">
+        <div class="section-label">My Story</div>
+        <h2 class="section-title">Turning Clicks Into<br>Business Results</h2>
+        <div class="divider"></div>
+
+        <p>I'm Aman Kumar Pathak — a Performance Marketing Specialist with an MBA in Marketing &amp; Operations. My focus is simple: help businesses grow through smart, data-driven digital marketing that delivers a real return on ad spend.</p>
+        <p>I got into digital marketing because I was fascinated by the intersection of psychology, data, and creativity. Every ad is a hypothesis — a message to a specific audience, at a specific moment. The job is to test, learn, and optimise until the numbers back you up.</p>
+        <p>My expertise spans Meta Ads (Facebook &amp; Instagram), Google Ads (Search, Display, YouTube), Social Media Management, Lead Generation, and Content Strategy. I've worked with brands across real estate, e-commerce, education, and services verticals.</p>
+        <p>Beyond the ads manager, I bring a business-owner mindset to every engagement. I care about your CPL, ROAS, and conversion rate — not just impressions and reach. Every campaign I build starts with understanding your customers and ends with numbers you can take to the bank.</p>
+
+        <div class="value-grid">
+          <div class="value-card reveal">
+            <div class="value-icon">🎯</div>
+            <h4>Performance-First</h4>
+            <p>Every campaign decision is anchored to measurable KPIs — ROAS, CPL, CTR, and conversions.</p>
+          </div>
+          <div class="value-card reveal">
+            <div class="value-icon">📊</div>
+            <h4>Data-Driven</h4>
+            <p>A/B testing, audience segmentation, and analytics drive every optimisation I make.</p>
+          </div>
+          <div class="value-card reveal">
+            <div class="value-icon">🔄</div>
+            <h4>Full-Funnel Thinking</h4>
+            <p>From top-of-funnel awareness to retargeting and conversion — I manage the entire journey.</p>
+          </div>
+          <div class="value-card reveal">
+            <div class="value-icon">🤝</div>
+            <h4>Client-Centric</h4>
+            <p>Clear communication, transparent reporting, and alignment with your business goals always.</p>
+          </div>
+        </div>
+
+        <div class="edu-block">
+          <div class="section-label">Education</div>
+          <div class="edu-card reveal">
+            <div class="edu-icon">🎓</div>
+            <div>
+              <h4>MBA — Marketing &amp; Operations</h4>
+              <div class="inst">Post Graduate Degree</div>
+              <div class="yr">Marketing Strategy · Consumer Behaviour · Brand Management · Business Operations</div>
+            </div>
+          </div>
+          <div class="edu-card reveal">
+            <div class="edu-icon">📱</div>
+            <div>
+              <h4>Digital Marketing Certifications</h4>
+              <div class="inst">Meta Blueprint · Google Skillshop · HubSpot Academy</div>
+              <div class="yr">Ongoing professional development in paid advertising and digital marketing</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <footer>
+    <div class="footer-nav">
+      <a href="about.html">About</a><a href="experience.html">Experience</a>
+      <a href="campaigns.html">Campaigns</a><a href="projects.html">Projects</a>
+      <a href="skills.html">Skills</a><a href="certifications.html">Certifications</a>
+    </div>
+    <p>© 2025 <span>Aman Kumar Pathak</span> — Performance Marketing Specialist</p>
+  </footer>
+
+  <script src="nav.js"></script>
+</body>
+</html>

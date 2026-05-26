@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Campaigns — Aman Kumar Pathak</title>
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:ital,wght@0,300;0,400;0,500;0,700;1,300&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    .kpi-row {
+      display: grid; grid-template-columns: repeat(4,1fr);
+      gap: 1px; background: var(--border); margin-bottom: 4rem;
+    }
+    .kpi-card { background: var(--bg); padding: 2rem 1.5rem; text-align: center; }
+    .kpi-num { font-family: 'Bebas Neue', sans-serif; font-size: 3.2rem; color: var(--accent); line-height: 1; }
+    .kpi-label { font-size: 0.78rem; color: var(--muted); margin-top: 0.4rem; text-transform: uppercase; letter-spacing: 1px; }
+
+    .filter-row { display: flex; gap: 0.5rem; flex-wrap: wrap; margin-bottom: 2.5rem; }
+    .filter-btn {
+      padding: 0.4rem 1.1rem; font-size: 0.78rem; font-weight: 500; letter-spacing: 1px;
+      text-transform: uppercase; background: none; border: 1px solid var(--border);
+      color: var(--muted); cursor: pointer; transition: all 0.2s; font-family: 'DM Sans', sans-serif;
+    }
+    .filter-btn:hover, .filter-btn.active { border-color: var(--accent); color: var(--accent); background: rgba(255,77,0,0.06); }
+
+    .campaign-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(320px,1fr)); gap: 1.5rem; }
+    .camp-card {
+      background: var(--card); border: 1px solid var(--border);
+      display: flex; flex-direction: column; transition: border-color 0.2s, transform 0.2s;
+    }
+    .camp-card:hover { border-color: rgba(255,77,0,0.4); transform: translateY(-4px); }
+    .camp-top { padding: 1.5rem 1.5rem 1rem; flex: 1; }
+    .camp-platform {
+      display: inline-flex; align-items: center; gap: 0.4rem;
+      font-size: 0.7rem; font-weight: 600; letter-spacing: 1.5px; text-transform: uppercase;
+      padding: 0.25rem 0.75rem; margin-bottom: 1rem;
+    }
+    .plt-meta { background: rgba(24,119,242,0.12); color: #5b9bd5; border: 1px solid rgba(91,155,213,0.25); }
+    .plt-google { background: rgba(52,168,83,0.12); color: #4caf72; border: 1px solid rgba(76,175,114,0.25); }
+    .plt-smm { background: rgba(131,58,180,0.12); color: #b07ad9; border: 1px solid rgba(176,122,217,0.25); }
+    .plt-both { background: rgba(255,77,0,0.1); color: var(--accent2); border: 1px solid rgba(255,77,0,0.25); }
+    .camp-industry { font-size: 0.72rem; color: var(--muted); margin-bottom: 0.5rem; text-transform: uppercase; letter-spacing: 0.5px; }
+    .camp-card h3 { font-size: 1rem; font-weight: 700; margin-bottom: 0.6rem; }
+    .camp-card p { font-size: 0.85rem; color: #999; line-height: 1.7; margin-bottom: 1rem; }
+    .camp-metrics {
+      display: grid; grid-template-columns: repeat(3,1fr);
+      gap: 1px; background: var(--border); border-top: 1px solid var(--border);
+    }
+    .metric-cell { background: var(--bg); padding: 0.85rem 0.5rem; text-align: center; }
+    .metric-val { font-family: 'Bebas Neue', sans-serif; font-size: 1.5rem; color: var(--accent); line-height: 1; }
+    .metric-key { font-size: 0.68rem; color: var(--muted); text-transform: uppercase; letter-spacing: 0.5px; margin-top: 0.2rem; }
+
+    .process-grid { display: grid; grid-template-columns: repeat(auto-fit,minmax(200px,1fr)); gap: 1.5rem; }
+    .process-step {
+      background: var(--card); border: 1px solid var(--border); padding: 1.75rem;
+      position: relative; transition: border-color 0.2s;
+    }
+    .process-step:hover { border-color: rgba(255,77,0,0.35); }
+    .step-num {
+      font-family: 'Bebas Neue', sans-serif; font-size: 3.5rem; color: rgba(255,77,0,0.12);
+      line-height: 1; margin-bottom: 0.5rem;
+    }
+    .process-step h4 { font-size: 0.95rem; font-weight: 600; margin-bottom: 0.4rem; }
+    .process-step p { font-size: 0.82rem; color: var(--muted); line-height: 1.65; }
+
+    @media(max-width:768px){
+      .kpi-row{grid-template-columns:1fr 1fr;}
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <a href="index.html" class="nav-logo">AKP<span>.</span></a>
+    <ul class="nav-links">
+      <li><a href="about.html">About</a></li>
+      <li><a href="experience.html">Experience</a></li>
+      <li><a href="campaigns.html">Campaigns</a></li>
+      <li><a href="projects.html">Projects</a></li>
+      <li><a href="skills.html">Skills</a></li>
+      <li><a href="certifications.html">Certifications</a></li>
+      <li><a href="index.html#contact" class="btn-primary" style="padding:0.4rem 1rem;font-size:0.78rem">Hire Me</a></li>
+    </ul>
+    <button class="nav-hamburger" aria-label="Menu"><span></span><span></span><span></span></button>
+  </nav>
+
+  <div class="page-hero">
+    <div class="page-hero-bg"></div>
+    <div class="page-hero-grid"></div>
+    <div class="page-hero-inner">
+      <div class="breadcrumb"><a href="index.html">Home</a> / Campaigns</div>
+      <h1 class="page-title">Campaign <span>Results</span></h1>
+      <p class="page-subtitle">Real performance data from Meta Ads, Google Ads, and Social Media campaigns across multiple industries.</p>
+    </div>
+  </div>
+
+  <!-- KPIs -->
+  <div class="section section-alt">
+    <div class="kpi-row">
+      <div class="kpi-card reveal"><div class="kpi-num">3.5×</div><div class="kpi-label">Avg. ROAS</div></div>
+      <div class="kpi-card reveal"><div class="kpi-num">10K+</div><div class="kpi-label">Leads Generated</div></div>
+      <div class="kpi-card reveal"><div class="kpi-num">40%</div><div class="kpi-label">Avg. CPL Reduction</div></div>
+      <div class="kpi-card reveal"><div class="kpi-num">20+</div><div class="kpi-label">Campaigns Managed</div></div>
+    </div>
+  </div>
+
+  <!-- CAMPAIGNS -->
+  <div class="section">
+    <div class="section-label">Portfolio</div>
+    <h2 class="section-title">Campaign Highlights</h2>
+    <p class="section-sub">Selected campaigns showcasing performance across different platforms and verticals.</p>
+
+    <div class="filter-row">
+      <button class="filter-btn active" onclick="filterCamps('all',this)">All</button>
+      <button class="filter-btn" onclick="filterCamps('meta',this)">Meta Ads</button>
+      <button class="filter-btn" onclick="filterCamps('google',this)">Google Ads</button>
+      <button class="filter-btn" onclick="filterCamps('smm',this)">Social Media</button>
+    </div>
+
+    <div class="campaign-grid" id="campGrid">
+
+      <div class="camp-card reveal" data-type="meta">
+        <div class="camp-top">
+          <span class="camp-platform plt-meta">📘 Meta Ads</span>
+          <div class="camp-industry">Real Estate</div>
+          <h3>Residential Property Lead Generation</h3>
+          <p>Ran Facebook &amp; Instagram lead campaigns targeting home buyers in specific pin codes. Used lookalike audiences built from existing buyer lists and retargeted website visitors to maximise lead quality.</p>
+        </div>
+        <div class="camp-metrics">
+          <div class="metric-cell"><div class="metric-val">60%</div><div class="metric-key">CPL Drop</div></div>
+          <div class="metric-cell"><div class="metric-val">4×</div><div class="metric-key">Lead Volume</div></div>
+          <div class="metric-cell"><div class="metric-val">2.8%</div><div class="metric-key">CTR</div></div>
+        </div>
+      </div>
+
+      <div class="camp-card reveal" data-type="google">
+        <div class="camp-top">
+          <span class="camp-platform plt-google">🔍 Google Ads</span>
+          <div class="camp-industry">E-Commerce</div>
+          <h3>Online Store Sales — Search &amp; Shopping</h3>
+          <p>Managed Google Search and Shopping campaigns for a D2C brand. Restructured ad groups by intent, refined negative keyword lists, and improved Quality Scores through landing page alignment.</p>
+        </div>
+        <div class="camp-metrics">
+          <div class="metric-cell"><div class="metric-val">3.8×</div><div class="metric-key">ROAS</div></div>
+          <div class="metric-cell"><div class="metric-val">30%</div><div class="metric-key">CPC Down</div></div>
+          <div class="metric-cell"><div class="metric-val">2×</div><div class="metric-key">Conversions</div></div>
+        </div>
+      </div>
+
+      <div class="camp-card reveal" data-type="meta">
+        <div class="camp-top">
+          <span class="camp-platform plt-meta">📘 Meta Ads</span>
+          <div class="camp-industry">Education</div>
+          <h3>Coaching Institute Enrollment Drive</h3>
+          <p>Lead generation campaign for an education institute promoting professional courses. Targeted students and working professionals using interest and behavioural segments with video and carousel creatives.</p>
+        </div>
+        <div class="camp-metrics">
+          <div class="metric-cell"><div class="metric-val">₹85</div><div class="metric-key">CPL</div></div>
+          <div class="metric-cell"><div class="metric-val">500+</div><div class="metric-key">Monthly Leads</div></div>
+          <div class="metric-cell"><div class="metric-val">3.2%</div><div class="metric-key">CTR</div></div>
+        </div>
+      </div>
+
+      <div class="camp-card reveal" data-type="google">
+        <div class="camp-top">
+          <span class="camp-platform plt-google">🔍 Google Ads</span>
+          <div class="camp-industry">Services</div>
+          <h3>Service Business Local Lead Gen</h3>
+          <p>Local service business targeting customers in specific cities using Google Search ads. Focused on high-intent keywords with call extensions and location targeting to drive phone inquiries.</p>
+        </div>
+        <div class="camp-metrics">
+          <div class="metric-cell"><div class="metric-val">45%</div><div class="metric-key">CPL Down</div></div>
+          <div class="metric-cell"><div class="metric-val">4.1</div><div class="metric-key">Quality Score</div></div>
+          <div class="metric-cell"><div class="metric-val">8%</div><div class="metric-key">Conv. Rate</div></div>
+        </div>
+      </div>
+
+      <div class="camp-card reveal" data-type="smm">
+        <div class="camp-top">
+          <span class="camp-platform plt-smm">📱 Social Media</span>
+          <div class="camp-industry">Lifestyle Brand</div>
+          <h3>Instagram Brand Growth — Organic</h3>
+          <p>Built and executed a 3-month content strategy for a lifestyle brand's Instagram. Created a consistent visual identity, weekly content calendar, and engagement-first posting strategy.</p>
+        </div>
+        <div class="camp-metrics">
+          <div class="metric-cell"><div class="metric-val">3×</div><div class="metric-key">Followers</div></div>
+          <div class="metric-cell"><div class="metric-val">12%</div><div class="metric-key">Eng. Rate</div></div>
+          <div class="metric-cell"><div class="metric-val">90</div><div class="metric-key">Days</div></div>
+        </div>
+      </div>
+
+      <div class="camp-card reveal" data-type="both">
+        <div class="camp-top">
+          <span class="camp-platform plt-both">⚡ Meta + Google</span>
+          <div class="camp-industry">Finance / Insurance</div>
+          <h3>Multi-Channel Lead Funnel</h3>
+          <p>Combined Meta Ads for top-of-funnel awareness with Google Search for bottom-of-funnel intent capture. Retargeted Meta audiences on Google Display to create a full-funnel approach.</p>
+        </div>
+        <div class="camp-metrics">
+          <div class="metric-cell"><div class="metric-val">55%</div><div class="metric-key">CPL Down</div></div>
+          <div class="metric-cell"><div class="metric-val">4×</div><div class="metric-key">Lead Quality</div></div>
+          <div class="metric-cell"><div class="metric-val">3.9×</div><div class="metric-key">ROAS</div></div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- PROCESS -->
+  <div class="section section-alt">
+    <div class="section-label">How I Work</div>
+    <h2 class="section-title">Campaign Process</h2>
+    <p class="section-sub">The systematic approach I take with every client campaign, from brief to reporting.</p>
+    <div class="process-grid">
+      <div class="process-step reveal">
+        <div class="step-num">01</div>
+        <h4>Discovery &amp; Goal Setting</h4>
+        <p>Understand your business, audience, competitors, and define clear KPIs before touching the ads manager.</p>
+      </div>
+      <div class="process-step reveal">
+        <div class="step-num">02</div>
+        <h4>Audience &amp; Keyword Research</h4>
+        <p>Build detailed audience segments, research high-intent keywords, and map the customer journey.</p>
+      </div>
+      <div class="process-step reveal">
+        <div class="step-num">03</div>
+        <h4>Creative Strategy</h4>
+        <p>Brief copy and creatives aligned to each funnel stage — awareness, consideration, and conversion.</p>
+      </div>
+      <div class="process-step reveal">
+        <div class="step-num">04</div>
+        <h4>Campaign Setup &amp; Launch</h4>
+        <p>Structure campaigns with proper tracking, pixel events, UTMs, and conversion goals configured.</p>
+      </div>
+      <div class="process-step reveal">
+        <div class="step-num">05</div>
+        <h4>Test &amp; Optimise</h4>
+        <p>Daily monitoring, A/B testing, audience pruning, and bid strategy adjustments to improve efficiency.</p>
+      </div>
+      <div class="process-step reveal">
+        <div class="step-num">06</div>
+        <h4>Reporting &amp; Scale</h4>
+        <p>Weekly reports with clear insights. Scale winning ad sets while pausing losers to protect your budget.</p>
+      </div>
+    </div>
+  </div>
+
+  <footer>
+    <div class="footer-nav">
+      <a href="about.html">About</a><a href="experience.html">Experience</a>
+      <a href="campaigns.html">Campaigns</a><a href="projects.html">Projects</a>
+      <a href="skills.html">Skills</a><a href="certifications.html">Certifications</a>
+    </div>
+    <p>© 2025 <span>Aman Kumar Pathak</span> — Performance Marketing Specialist</p>
+  </footer>
+
+  <script src="nav.js"></script>
+  <script>
+    function filterCamps(type, btn) {
+      document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      document.querySelectorAll('.camp-card').forEach(c => {
+        if (type === 'all' || c.dataset.type === type) {
+          c.style.display = ''; setTimeout(() => c.style.opacity = '1', 10);
+        } else {
+          c.style.opacity = '0'; setTimeout(() => c.style.display = 'none', 300);
+        }
+      });
+    }
+  </script>
+</body>
+</html>
